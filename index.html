@@ -1,17 +1,127 @@
-<!DOCTYPE html>
+<!DOCTYPE      html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+       <title>kigo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <!-- LANDING -->
+  <div id="landing-form">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-signup" role="tab"
+        aria-controls="nav-home" aria-selected="true">Sign Up</a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-signin" role="tab" aria-controls="nav-profile"
+        aria-selected="false">Sign In</a>
+    </div>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-signup" role="tabpanel" aria-labelledby="nav-home-tab">
+        <form>
+          <label>
+            <p class="label-txt">Email</p>
+            <input class="input" id="signup-email" required type="email">
+            <div class="line-box">
+              <div class="line"></div>
+            </div>
+          </label>
+          <label>
+            <p class="label-txt">Username</p>
+            <input class="input" id="signup-username" required type="text">
+            <div class="line-box">
+              <div class="line"></div>
+            </div>
+          </label>
+          <label>
+            <p class="label-txt">Password</p>
+            <input class="input" id="signup-password" required type="password">
+            <div class="line-box">
+              <div class="line"></div>
+            </div>
+          </label>
+          <label>
+            <p class="label-txt" id="confirm-password">Password Confirmation</p>
+            <input class="input" id="signup-confirmation" required type="password">
+            <div class="line-box">
+              <div class="line"></div>
+            </div>
+          </label>
+          <button id="signup" type="submit">Sign Up</button>
+        </form>
+      </div>
+      <div class="tab-pane fade inactive" id="nav-signin" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <form>
+          <label>
+            <p class="label-txt">Username</p>
+            <input class="input" id="signin-username" required type="text">
+            <div class="line-box">
+              <div class="line"></div>
+            </div>
+          </label>
+          <label>
+            <p class="label-txt">Password</p>
+            <input class="input" id="signin-password" required type="password">
+            <div class="line-box">
+              <div class="line"></div>
+            </div>
+          </label>
+          <button id="signin" type="submit">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- HOMEPAGE -->
+  <div id="homepage" style="display: none;">
+    <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Kigo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <form class="form-inline">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+          </div>
+          <input type="text" class="form-control" placeholder="author" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+      </form>
+    </nav>
+  </div>
+
+</body>
+
 </html>
