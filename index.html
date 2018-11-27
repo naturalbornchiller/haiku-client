@@ -1,4 +1,4 @@
-<!DOCTYPE      html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -16,7 +16,17 @@
 
 <body>
   <!-- LANDING -->
-  <div id="landing-form">
+  <div id="landing">
+    <h1 class="wordmark" style="display: none;"><strong>kigo</strong></h1>
+    <div class="line-box">
+        <div class="landing-line"></div>
+    </div>
+    <p id="enter-message" style="font-size: 20px; display: none;">The haiku weblog.</p>
+    <h3 class="hvr-float-shadow " id="enter-button" style="display: none;">Enter</h3>
+  </div>
+
+  <!-- AUTH -->
+  <div id="auth-form" style="display:none;">
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
       <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-signup" role="tab"
         aria-controls="nav-home" aria-selected="true">Sign Up</a>
@@ -30,28 +40,28 @@
             <p class="label-txt">Email</p>
             <input class="input" id="signup-email" required type="email">
             <div class="line-box">
-              <div class="line"></div>
+              <div class="field-line"></div>
             </div>
           </label>
           <label>
             <p class="label-txt">Username</p>
             <input class="input" id="signup-username" required type="text">
             <div class="line-box">
-              <div class="line"></div>
+              <div class="field-line"></div>
             </div>
           </label>
           <label>
             <p class="label-txt">Password</p>
             <input class="input" id="signup-password" required type="password">
             <div class="line-box">
-              <div class="line"></div>
+              <div class="field-line"></div>
             </div>
           </label>
           <label>
             <p class="label-txt" id="confirm-password">Password Confirmation</p>
             <input class="input" id="signup-confirmation" required type="password">
             <div class="line-box">
-              <div class="line"></div>
+              <div class="field-line"></div>
             </div>
           </label>
           <button id="signup" type="submit">Sign Up</button>
@@ -63,14 +73,14 @@
             <p class="label-txt">Username</p>
             <input class="input" id="signin-username" required type="text">
             <div class="line-box">
-              <div class="line"></div>
+              <div class="field-line"></div>
             </div>
           </label>
           <label>
             <p class="label-txt">Password</p>
             <input class="input" id="signin-password" required type="password">
             <div class="line-box">
-              <div class="line"></div>
+              <div class="field-line"></div>
             </div>
           </label>
           <button id="signin" type="submit">Sign In</button>
@@ -78,8 +88,9 @@
       </div>
     </div>
   </div>
-  <!-- HOMEPAGE -->
-  <div id="homepage" style="display: none;">
+
+  <!-- NAV -->
+  <div id="utility-nav" style="display: none;">
     <nav class="navbar navbar-light bg-light">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Kigo</a>
@@ -122,6 +133,17 @@
     </nav>
   </div>
 
+  <!-- HOME -->
+  <div id="homepage" style="display: none;">
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" style="display: none;">
+  </div>
+
+  <!-- ACCOUNT -->
+  <div id="profile" style="display: none;">
+  </div>
 </body>
 
 </html>

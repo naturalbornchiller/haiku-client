@@ -1,13 +1,45 @@
 /* eslint-disable indent */
-const toastr = require('../../node_modules/toastr/build/toastr.min.js')
+require('jquery-ui-dist/jquery-ui')
+const toastr = require('toastr/build/toastr.min')
 const store = require('./store.js')
+const successColor = '#98fb98' // color for successful signin
+const backgroundAuthColor = '#86C5F4'
+const backgroundHomeColor = '#fff'
 
 /** STANDALONES */
 function successAlert () {
-    toastr.success('Welcome, @' + store.username)
-    setTimeout(function () {
-        $('#homepage').slideDown('slow')
-    }, 3000)
+    // hide auth form
+    $('#auth-form').hide('clip', 2000)
+    // fade background color and show navbar
+    $('body').animate({'background-color': backgroundHomeColor}, 3000, function () {
+        $('#utility-nav').show('slow')
+    })
+    // growl alert success
+    toastr.success(`Welcome, @${store.username}`)
+    // if new user show 'about' page
+    if (store.newUser) {
+        setTimeout(function () {
+            $('#about').slideDown('slow')
+        }, 3000)
+    } else { // else show 'homepage'
+        setTimeout(function () {
+            $('#homepage').slideDown('slow')
+        }, 3000)
+    }
+}
+
+function addPulseToFormFields () {
+    // make input lines 'pulse' on field focus/unfocus
+    $('#enter-button').on('click', function () {
+        $('#auth-form').show()
+        $('body').animate({'background-color': backgroundAuthColor}, 2000)
+        $('#landing').hide('blind', 500)
+        $('input').focusin(function () {
+            $(this).next('.field-line').css('width', '100%')
+        }).focusout(function () {
+            $(this).next('.field-line').css('width', '0%')
+        })
+    })
 }
 
 function invalidSubmitAlerts () {
@@ -49,11 +81,6 @@ function onExitEmptyFormField () {
     }
 }
 
-// Clears error message upon field reentry
-function onReenterFormField () {
-    $('#auth-error').html('').removeClass()
-}
-
 // MOVE TO NEW FILE
 function getSeason () {
     const date = new Date()
@@ -83,8 +110,8 @@ function getSeason () {
 }
 
 module.exports = {
+    addPulseToFormFields,
     successAlert,
     invalidSubmitAlerts,
-    onExitEmptyFormField,
-    onReenterFormField
+    onExitEmptyFormField
 }

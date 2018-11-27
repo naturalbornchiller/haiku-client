@@ -11,8 +11,9 @@ const onSignup = e => {
     data.password = $('#signup-password').val()
     data.password_confirmation = $('#signup-confirmation').val()
     // store username and password mismatch
-    store.username = data.username
     store.passwordMismatch = data.password !== data.password_confirmation
+    store.username = data.username
+    store.newUser = true
 
     authApi.signup(data)
         .then(authUi.signinupSuccess)
@@ -24,8 +25,9 @@ const onSignin = e => {
     const data = {}
     data.username = $('#signin-username').val()
     data.password = $('#signin-password').val()
-    // store username
+    // store username and userType
     store.username = data.username
+    store.newUser = false
 
     authApi.signin(data)
         .then(authUi.signinupSuccess)
