@@ -8,7 +8,7 @@ $(() => {
   landingRenderer.renderLanding()
 
   // Auth
-  formRenderer.addPulseToFormFields()
+  formRenderer.renderForms()
   $('#signup').on('click', authEvents.onSignup)
   $('#signin').on('click', authEvents.onSignin)
   // alert that form field is empty
