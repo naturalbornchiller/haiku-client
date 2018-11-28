@@ -8,6 +8,10 @@
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/css/mdb.min.css" />
+
+
 
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -91,46 +95,43 @@
 
   <!-- NAV -->
   <div id="utility-nav" style="display: none;">
-    <nav class="navbar navbar-light bg-light">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Kigo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar bg-primary top-nav-collapse">
+      <a class="navbar-brand" href="#">kigo.</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <form class="form-inline">
+                <div class="md-form my-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </div>
+              </form>
+          </ul>
+          <ul class="navbar-nav ml-auto nav-flex-icons">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Dropdown
+              <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span id="nav-greeting"></span>
+                <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item waves-effect waves-light" id="change-password" href="#">Change Password</a>
+                <a class="dropdown-item waves-effect waves-light" id="change-username" href="#">Change Username</a>
+                <a class="dropdown-item waves-effect waves-light" id="signout" href="#">Sign Out</a>
               </div>
             </li>
           </ul>
-        </div>
-      </nav>
-      <form class="form-inline">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">@</span>
-          </div>
-          <input type="text" class="form-control" placeholder="author" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-      </form>
-    </nav>
+      </div>
+  </nav>
   </div>
 
   <!-- HOME -->

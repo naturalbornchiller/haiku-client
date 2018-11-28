@@ -17,6 +17,7 @@
     "toastr": "^2.1.4"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.5.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
