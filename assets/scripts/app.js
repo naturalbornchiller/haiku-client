@@ -1,7 +1,7 @@
 'use strict'
 const authEvents = require('./auth/authEvents.js')
-const formRenderer = require('./form-renderer.js')
-const landingRenderer = require('./landing-renderer.js')
+const formRenderer = require('./formRenderer.js')
+const landingRenderer = require('./landingRenderer.js')
 
 $(() => {
   // Landing

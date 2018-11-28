@@ -28,13 +28,13 @@
   <!-- AUTH -->
   <div id="auth-form" style="display:none;">
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-signup" role="tab"
-        aria-controls="nav-home" aria-selected="true">Sign Up</a>
-      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-signin" role="tab" aria-controls="nav-profile"
+      <a class="nav-item nav-link active" id="nav-signup-tab" href="#nav-signup" data-toggle="tab" role="tab"
+        aria-controls="nav-signup" aria-selected="true">Sign Up</a>
+      <a class="nav-item nav-link" id="nav-signin-tab" href="#nav-signin" data-toggle="tab" role="tab" aria-controls="nav-signin"
         aria-selected="false">Sign In</a>
     </div>
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-signup" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="tab-pane nav-link fade show active" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
         <form>
           <label>
             <p class="label-txt">Email</p>
@@ -67,7 +67,7 @@
           <button id="signup" type="submit">Sign Up</button>
         </form>
       </div>
-      <div class="tab-pane fade inactive" id="nav-signin" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <div class="tab-pane nav-link fade inactive" id="nav-signin" role="tabpanel" aria-labelledby="nav-signin-tab">
         <form>
           <label>
             <p class="label-txt">Username</p>

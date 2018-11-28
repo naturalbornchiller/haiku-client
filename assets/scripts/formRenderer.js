@@ -16,6 +16,10 @@ function renderForms () {
         }).focusout(function () {
             $(this).next('.field-line').css('width', '0%')
         })
+        // $('a.nav-link').on('click', function () {
+        //     $('.tab-pane').hide()
+        //     $($(this).attr('href')).show()
+        // })
     })
 }
 

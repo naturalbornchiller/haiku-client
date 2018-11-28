@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-require('../../node_modules/jquery-ui-dist/jquery-ui.js')
+require('jquery-ui-dist/jquery-ui')
 
 function renderLanding () {
     // fade in 'KIGO' wordmark
