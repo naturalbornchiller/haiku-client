@@ -1,5 +1,6 @@
 /* eslint-disable indent */
 require('jquery-ui-dist/jquery-ui')
+const pageRenderer = require('./pageRenderer.js')
 const toastr = require('toastr/build/toastr.min')
 const store = require('./store.js')
 const backgroundAuthColor = '#86C5F4'
@@ -22,6 +23,7 @@ function renderForms () {
 function successAlert () {
     // growl alert success
     toastr.success(`Welcome, @${store.username}`)
+    pageRenderer.renderPage()
 }
 
 function invalidSubmitAlerts () {

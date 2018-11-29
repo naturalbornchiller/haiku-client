@@ -19,7 +19,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
   <!-- LANDING -->
   <div id="landing">
     <h1 class="landing-wordmark" style="display: none;"><strong>kigo</strong></h1>
@@ -108,13 +108,13 @@
           </form>
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link" id="nav-home" href="#">home</a>
+                  <a class="nav-link" id="nav-home" href="javascript:void(0)">home</a>
               </li>
           </ul>
           <a class="navbar-brand nav-wordmark" href="#">kigo</a>
           <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                  <a class="nav-link" id="nav-about" href="#">about</a>
+                  <a class="nav-link" id="nav-about" href="javascript:void(0)">about</a>
               </li>
           </ul>
           <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -136,7 +136,10 @@
 
   <!-- HOME -->
   <div id="homepage" style="display: none;">
-    
+    <section>
+      <h1>Test</h1>
+      <p>Lorem ipsem dolores miles nifender contram roshka di monomine</p>
+    </section>
   </div>
 
   <!-- ABOUT -->
@@ -194,10 +197,6 @@
           </p>
         </div>
       </div>
-  </div>
-
-  <!-- ACCOUNT -->
-  <div id="profile" style="display: none;">
   </div>
 </body>
 
