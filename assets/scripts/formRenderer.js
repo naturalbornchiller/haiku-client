@@ -39,15 +39,15 @@ function invalidSubmitAlerts () {
     })
 
     if (emptyFields) { // alert if fields are empty
-        toastr.error('All fields must be filled out.')
+        toastr.error('All fields must be filled out')
     } else if (store.passwordMismatch) { // alert if passwords do not match
-        toastr.error('Passwords must match.')
+        toastr.error('Passwords must match')
         $('#confirm-password').addClass('text-danger')
         setTimeout(function () {
             $('#confirm-password').removeClass('text-danger')
         }, 2000)
     } else { // alert that email or password is incorrect
-        toastr.error('Incorrect email or password.')
+        toastr.error('Incorrect email or password')
     }
 }
 

@@ -2,8 +2,8 @@
 require('jquery-ui-dist/jquery-ui')
 
 function renderLanding () {
-    // fade in 'KIGO' wordmark
-    $('.wordmark').show('fade', 2000)
+    // fade in 'KIGO' landing-wordmark
+    $('.landing-wordmark').show('fade', 2000)
     // fade in the entry message
     $('#enter-message').show('fade', 3000)
     // fade in enter button

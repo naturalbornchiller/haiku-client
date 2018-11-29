@@ -9,7 +9,8 @@ function renderPage () {
         }, 3000)
     } else { // else show 'homepage'
         setTimeout(function () {
-            $('#homepage').slideDown('slow')
+            //CHANGE TO $('#homepage')
+            $('#about').slideDown('slow')
         }, 3000)
     }
 }

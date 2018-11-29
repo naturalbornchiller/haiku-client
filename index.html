@@ -16,12 +16,13 @@
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 </head>
 
 <body>
   <!-- LANDING -->
   <div id="landing">
-    <h1 class="wordmark" style="display: none;"><strong>kigo</strong></h1>
+    <h1 class="landing-wordmark" style="display: none;"><strong>kigo</strong></h1>
     <div class="line-box">
         <div class="landing-line"></div>
     </div>
@@ -95,27 +96,26 @@
 
   <!-- NAV -->
   <div id="utility-nav" style="display: none;">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar bg-primary top-nav-collapse">
-      <a class="navbar-brand" href="#">kigo.</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar bg-dark top-nav-collapse">
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="form-inline mr-auto">
+              <div class="md-form my-0">
+                <input id="nav-search" class="form-control-sm mr-sm-2" type="text" placeholder="search by title" aria-label="Search">
+              </div>
+          </form>
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" id="nav-home" href="#">home</a>
+              </li>
+          </ul>
+          <a class="navbar-brand nav-wordmark" href="#">kigo</a>
           <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
-              </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" id="nav-about" href="#">about</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <form class="form-inline">
-                <div class="md-form my-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                </div>
-              </form>
           </ul>
           <ul class="navbar-nav ml-auto nav-flex-icons">
             <li class="nav-item dropdown">
@@ -136,10 +136,75 @@
 
   <!-- HOME -->
   <div id="homepage" style="display: none;">
+    
   </div>
 
   <!-- ABOUT -->
   <div id="about" style="display: none;">
+    <div class="haiku-info-super-container">
+      <div id=kigo-info-container>
+        <h1 class='faq'>What is Kigo?</h1>
+        <p class="pertinant-information">
+          I chose this name, <strong>Kigo</strong> (季語 "season word") for it's significance as a recognizable 
+          mark of haiku. Kigo are words or phrases meant to evoke the season that a poem is 
+          set in (e.g., cherry blossoms are a common spring kigo in japanese poetry, whereas 
+          the moon is strongly associated with autumn)—references to nature's intrinsic and 
+          perennial symbols. A well-chosen kigo can ground the poem in an unknowable, yet 
+          universal time. In this way, without being prolix, it is able to connect its reader to 
+          the moment and place in which the poem was written.
+        </p>
+      </div>
+      <div id=haiku-info-container>
+        <h1 class="faq">What Are Haiku?</h1>
+        <p class="pertinant-information">
+          <strong>Haiku</strong> are brief, imagistic poems traditionally depicting—or at 
+          least alluding—to nature. Their lifecycle is tripartite within the reader - <i>
+          language &#8594; image &#8594; feeling</i> - digested in unhurried succession. It is difficult 
+          to ascertain what elements (and doses of each) are necessary to produce powerful 
+          haiku, but there are a number of things that can be kept in mind. A haiku, by nature, 
+          is a distillation of an experience; it is a mood and a moment in time. It reflects a 
+          fresh way of seeing that is unselfconscious, almost childlike. It should deal 
+          strictly in the immediate; any references to setting, mood, or metaphor must be 
+          smuggled in. References to interpretation of any kind can be omitted entirely. 
+          Lastly, and perhaps most importantly, the haiku's language should be resonant, 
+          natural, and succinct.<br><br><i>"The poet pares away that which is supernumerary; what 
+          is left is haiku."</i>
+        </p>
+      </div>
+    </div>
+    <div class="developer-info-super-container">
+        <div id=haiku-guide-container>
+          <h2 class='faq'>Things to avoid when writing haiku:</h2>
+          <ul class="pertinant-information dashed">
+            <li>Philosophical statements</li>
+            <li>Anthropomorphism</li>
+            <li>Personification</li>
+            <li>Direct metaphor</li>
+            <li>Description</li>
+            <li>Explanation</li>
+            <li>Big words</li>
+            <li>Opinion</li>
+            <li>Simile</li>
+          </ul>
+        </div>
+        <div id=developer-info-container>
+          <h1 class="faq">About the Developer</h1>
+          <p class="pertinant-information">
+            <strong>Haiku</strong> are brief, imagistic poems traditionally depicting—or at 
+            least alluding—to nature. Their lifecycle is tripartite within the reader - <i>
+            language &#8594; image &#8594; feeling</i> - digested in unhurried succession. It is difficult 
+            to ascertain what elements (and doses of each) are necessary to produce powerful 
+            haiku, but there are a number of things that can be kept in mind. A haiku, by nature, 
+            is a distillation of an experience; it is a mood and a moment in time. It reflects a 
+            fresh way of seeing that is unselfconscious, almost childlike. It should deal 
+            strictly in the immediate; any references to setting, mood, or metaphor must be 
+            smuggled in. References to interpretation of any kind can be omitted entirely. 
+            Lastly, and perhaps most importantly, the haiku's language should be resonant, 
+            natural, and succinct.<br><br><i>"The poet pares away that which is supernumerary; what 
+            is left is haiku."</i>
+          </p>
+        </div>
+      </div>
   </div>
 
   <!-- ACCOUNT -->

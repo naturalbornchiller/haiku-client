@@ -5,13 +5,14 @@ $starting_background_color: rgb(8, 21, 38);
 $auth_background_color: rgb(134, 196, 244);
 $form_color: #fff;
 $landing_color: $form_color;
+$nav_text_color: #7CCD7C;
 
 body {
   background: $starting_background_color;
 }
 
 // PROPRIETARY STYLES
-.wordmark {
+.landing-wordmark {
   font-family: $haiku_font;
   font-size: 70px;
   letter-spacing: 5px;
@@ -138,6 +139,98 @@ button:hover {
 
 #signin {
   margin-top: 170px;
+}
+
+// NAVBAR
+.navbar {
+  padding: 5px 100px;
+}
+#nav-home, #nav-about {
+  padding: 20px;
+  &:hover {
+    color: $nav_text_color;
+  }
+}
+#navbarDropdownMenuLink:hover {
+  color: $nav_text_color;
+}
+.nav-wordmark {
+  font-family: $haiku_font;
+  font-size: 60px;
+  letter-spacing: 4px;
+  color: #fff;
+  margin-right: -10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#nav-search {
+  color: #fff;
+  border-bottom: 1px solid #ffffff;
+}
+#nav-search:focus {
+  border-bottom: 1px solid $nav_text_color;
+  -webkit-box-shadow: 0 1px 0 0 #22282b;
+  -moz-box-shadow: 0 1px 0 0 #22282b;
+  box-shadow: 0 1px 0 0 #22282b;
+}
+#nav-search::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;  
+}
+::-moz-placeholder {
+  font-style: italic;  
+}
+:-ms-input-placeholder {  
+  font-style: italic; 
+}
+
+// PAGE
+#about, #homepage {
+}
+.haiku-info-super-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 auto;
+  margin-top: 180px;
+  margin-bottom: -10px;
+  width: 80vw;
+  height: 54vw;
+}
+#haiku-info-container {
+  order: 1;
+  align-self: flex-end;
+}
+.faq {
+  font-weight: 800;
+}
+.pertinant-information {
+  line-height: 2em;
+}
+.developer-info-super-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 80vw;
+  height: 54vw;
+}
+#developer-info-container {
+  order: 1;
+  align-self: flex-end;
+}
+
+ul.dashed {
+  list-style-type: none;
+}
+ul.dashed > li:before {
+  content: "- ";
+  text-indent: -5px;
 }
 
 // EFFECTS
