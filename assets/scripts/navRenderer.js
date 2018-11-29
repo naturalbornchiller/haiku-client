@@ -1,5 +1,4 @@
 /* eslint-disable indent */
-require('jquery-ui-dist/jquery-ui')
 const store = require('./store.js')
 const backgroundPageColor = '#fff'
 
