@@ -34,7 +34,6 @@ const signin = data => {
 }
 
 const signout = () => {
-    console.log(store.user.token)
     return $.ajax({
         url: `${config.apiUrl}/sign-out`,
         method: 'DELETE',
@@ -44,8 +43,26 @@ const signout = () => {
     })
 }
 
+const changePassword = data => {
+    // Passwords cannot be the same
+    if (data.passwords.old !== data.passwords.new) {
+        store.passwordMismatch = true
+        data.passwords = {}
+    }
+
+    return $.ajax({
+        url: `${config.apiUrl}/change-password`,
+        method: 'PATCH',
+        headers: {
+            Authorization: `Token token=${store.user.token}`
+        },
+        data
+    })
+}
+
 module.exports = {
     signup,
     signin,
-    signout
+    signout,
+    changePassword
 }

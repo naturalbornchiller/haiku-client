@@ -3,6 +3,7 @@
 /* eslint-disable one-var */
 /* eslint-disable indent */
 require('jquery-ui-dist/jquery-ui')
+const toastr = require('toastr/build/toastr.min')
 const store = require('./store.js')
 
 function renderPage () {
@@ -41,6 +42,40 @@ function renderHomePage () {
     }, 1500)
 }
 
+function invalidSubmitAlerts () {
+    let emptyFields = false
+    // Turns all empty formfields red for two seconds upon submit
+    if (!$('#old-password').val()) {
+        emptyFields = true
+        $('#old-password').addClass('text-danger')
+        setTimeout(function () {
+            $('#old-password').removeClass('text-danger')
+        }, 2000)
+    } else if (!$('#new-password').val()) {
+        emptyFields = true
+        $('#new-password').addClass('text-danger')
+        setTimeout(function () {
+            $('#new-password').removeClass('text-danger')
+        }, 2000)
+    }
+
+    if (emptyFields) { // alert if fields are empty
+        toastr.error('Both fields must be filled out')
+    } else if (!store.passwordMismatch) { // alert if passwords do not match
+        toastr.error('New password must actually be new')
+        $('.modal-body input').addClass('text-danger')
+        setTimeout(function () {
+            $('.modal-body input').removeClass('text-danger')
+        }, 2000)
+    } else { // alert that email or password is incorrect
+        toastr.error('Old password incorrect')
+    }
+}
+
+const changePasswordSuccessAlert = () => toastr.success('Password change went through')
+
 module.exports = {
-    renderPage
+    renderPage,
+    invalidSubmitAlerts,
+    changePasswordSuccessAlert
 }

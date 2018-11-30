@@ -31,15 +31,10 @@ function showForms () {
     })
 }
 
-function signinSuccessAlert () {
-    // growl alert success
-    toastr.success(`Welcome, @${store.username}`)
-}
-
-function signoutSuccessAlert () {
-    toastr.success(`See you soon, @${store.username}!`)
-}
-
+// ALERTS
+const signinSuccessAlert = () => toastr.success(`Welcome, @${store.username}`)
+const signoutSuccessAlert = () => toastr.success(`See you soon, @${store.username}!`)
+const signoutFailureAlert = () => toastr.error('Check connection and try again', 'Error')
 function invalidSubmitAlerts () {
     let emptyFields = false
     // Turns all empty formfields red for two seconds upon submit
@@ -83,6 +78,7 @@ module.exports = {
     renderForms,
     signinSuccessAlert,
     signoutSuccessAlert,
+    signoutFailureAlert,
     invalidSubmitAlerts,
     onExitEmptyFormField
 }

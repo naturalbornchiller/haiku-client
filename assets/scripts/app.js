@@ -12,6 +12,7 @@ $(() => {
   $('#signup').on('click', authEvents.onSignup)
   $('#signin').on('click', authEvents.onSignin)
   $('#signout').on('click', authEvents.onSignout)
+  $('#confirm-password-change').on('click', authEvents.onChangePassword)
   // alert that form field is empty
   $('input').on('blur', formRenderer.onExitEmptyFormField)
 

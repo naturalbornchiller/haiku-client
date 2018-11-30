@@ -36,14 +36,24 @@ const onSignin = e => {
 
 const onSignout = e => {
     e.preventDefault()
-    console.log('onSignout')
     authApi.signout()
         .then(authUi.signoutSuccess)
-        .catch(console.log)
+        .catch(authUi.signoutFailure)
+}
+
+const onChangePassword = e => {
+    e.preventDefault()
+    const data = { passwords: {} }
+    data.passwords.old = $('#old-password').val()
+    data.passwords.new = $('#new-password').val()
+    authApi.changePassword(data)
+        .then(authUi.changePasswordSuccess)
+        .catch(authUi.changePasswordFailure)
 }
 
 module.exports = {
     onSignup,
     onSignin,
-    onSignout
+    onSignout,
+    onChangePassword
 }
