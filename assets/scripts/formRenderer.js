@@ -1,29 +1,30 @@
 /* eslint-disable indent */
 require('jquery-ui-dist/jquery-ui')
-const pageRenderer = require('./pageRenderer.js')
 const toastr = require('toastr/build/toastr.min')
 const store = require('./store.js')
 const backgroundAuthColor = '#86C5F4'
 
 /** STANDALONES */
 function renderForms () {
-    $('#enter-button').on('click', function () {
-        $('#auth-form').show()
-        $('body').animate({'background-color': backgroundAuthColor}, 2000)
-        $('#landing').hide('blind', 500)
-        // make input lines 'pulse' on field focus/unfocus
-        $('input').focusin(function () {
-            $(this).next('.field-line').css('width', '100%')
-        }).focusout(function () {
-            $(this).next('.field-line').css('width', '0%')
-        })
+    $('#auth-form').show()
+    $('body').animate({'background-color': backgroundAuthColor}, 2000)
+    $('#landing').hide('blind', 500)
+    $('#utility-nav, #poems, #about').hide('fade', 1000)
+    // make input lines 'pulse' on field focus/unfocus
+    $('input').focusin(function () {
+        $(this).next('.field-line').css('width', '100%')
+    }).focusout(function () {
+        $(this).next('.field-line').css('width', '0%')
     })
 }
 
-function successAlert () {
+function signinSuccessAlert () {
     // growl alert success
     toastr.success(`Welcome, @${store.username}`)
-    pageRenderer.renderPage()
+}
+
+function signoutSuccessAlert () {
+    toastr.success(`See you soon, @${store.username}!`)
 }
 
 function invalidSubmitAlerts () {
@@ -65,6 +66,14 @@ function onExitEmptyFormField () {
     }
 }
 
+module.exports = {
+    renderForms,
+    signinSuccessAlert,
+    signoutSuccessAlert,
+    invalidSubmitAlerts,
+    onExitEmptyFormField
+}
+
 // MOVE TO NEW FILE
 function getSeason () {
     const date = new Date()
@@ -93,9 +102,3 @@ function getSeason () {
     return season
 }
 
-module.exports = {
-    renderForms,
-    successAlert,
-    invalidSubmitAlerts,
-    onExitEmptyFormField
-}

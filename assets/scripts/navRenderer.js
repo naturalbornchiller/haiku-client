@@ -1,5 +1,6 @@
 /* eslint-disable indent */
 const store = require('./store.js')
+const authEvents = require('./auth/authEvents.js')
 const backgroundPageColor = '#fff'
 
 function renderNav () {
@@ -9,7 +10,7 @@ function renderNav () {
     $('body').animate({'background-color': backgroundPageColor}, 2000, function () {
         $('#utility-nav').show('slow')
         attachDropdownBlindEffect()
-        // attachSearchColorSwitchEffect()
+        // $('#signout').on('click', authEvents.onSignout)
         $('#nav-greeting').text(`Hello, ${store.username}`)
     })
 }
@@ -17,12 +18,13 @@ function renderNav () {
 function attachDropdownBlindEffect () {
     // Add slideDown animation to Bootstrap dropdown when expanding.
     $('.dropdown').on('show.bs.dropdown', function () {
-        $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown()
+        $('#signout').on('click', authEvents.onSignout)
     })
 
     // Add slideUp animation to Bootstrap dropdown when collapsing.
     $('.dropdown').on('hide.bs.dropdown', function () {
-        $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp()
     })
 }
 

@@ -8,7 +8,7 @@ $(() => {
   landingRenderer.renderLanding()
 
   // Auth
-  formRenderer.renderForms() // calls navRenderer onSuccess
+  $('#enter-button').on('click', formRenderer.renderForms) // calls navRenderer onSuccess
 
   $('#signup').on('click', authEvents.onSignup)
   $('#signin').on('click', authEvents.onSignin)

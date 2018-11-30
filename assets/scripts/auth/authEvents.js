@@ -34,7 +34,16 @@ const onSignin = e => {
         .catch(authUi.signinupFailure)
 }
 
+const onSignout = e => {
+    e.preventDefault()
+    console.log('onSignout')
+    authApi.signout()
+        .then(console.log)
+        .catch(console.log)
+}
+
 module.exports = {
     onSignup,
-    onSignin
+    onSignin,
+    onSignout
 }

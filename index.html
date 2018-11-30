@@ -19,7 +19,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 </head>
 
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+<body>
   <!-- LANDING -->
   <div id="landing">
     <h1 class="landing-wordmark" style="display: none;"><strong>kigo</strong></h1>
@@ -97,9 +97,6 @@
   <!-- NAV -->
   <div id="utility-nav" style="display: none;">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar bg-dark top-nav-collapse">
-      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button> -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <form class="form-inline mr-auto">
               <div class="md-form my-0">
@@ -108,7 +105,7 @@
           </form>
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link" id="nav-home" href="javascript:void(0)">home</a>
+                  <a class="nav-link" id="nav-poems" href="javascript:void(0)">poems</a>
               </li>
           </ul>
           <a class="navbar-brand nav-wordmark" href="#">kigo</a>
@@ -124,9 +121,9 @@
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item waves-effect waves-light" id="change-password" href="#">Change Password</a>
-                <a class="dropdown-item waves-effect waves-light" id="change-username" href="#">Change Username</a>
-                <a class="dropdown-item waves-effect waves-light" id="signout" href="#">Sign Out</a>
+                <a class="dropdown-item waves-effect waves-light" id="change-password">Change Password</a>
+                <!-- <a class="dropdown-item waves-effect waves-light" id="change-username" href="#">Change Username</a> -->
+                <a class="dropdown-item waves-effect waves-light" id="signout">Sign Out</a>
               </div>
             </li>
           </ul>
@@ -136,9 +133,14 @@
 
   <!-- HOME -->
   <div id="homepage" style="display: none;">
-    <section>
-      <h1>Test</h1>
-      <p>Lorem ipsem dolores miles nifender contram roshka di monomine</p>
+    <section class="haiku-display">
+      <h1 class="haiku-title" align="center">Test</h1>
+      <p class="haiku-content">
+        Lorem ipsem dolores:<br>
+        miles nifender contram<br>
+        roshka di monopi.
+      </p>
+      <p class="haiku-author">by Akamana Banana</p>
     </section>
   </div>
 
@@ -148,27 +150,29 @@
       <div id=kigo-info-container>
         <h1 class='faq'>What is Kigo?</h1>
         <p class="pertinant-information">
+          It's a site for sharing and reading <i>haiku</i>, a form of short, unrhymed, Japanese poem.
           I chose this name, <strong>Kigo</strong> (季語 "season word") for it's significance as a recognizable 
           mark of haiku. Kigo are words or phrases meant to evoke the season that a poem is 
           set in (e.g., cherry blossoms are a common spring kigo in japanese poetry, whereas 
           the moon is strongly associated with autumn)—references to nature's intrinsic and 
           perennial symbols. A well-chosen kigo can ground the poem in an unknowable, yet 
           universal time. In this way, without being prolix, it is able to connect its reader to 
-          the moment and place in which the poem was written.
+          the moment and place in which the poem is written.
         </p>
       </div>
       <aside id="haiku-example-container">
         <p id="haiku-example" style="display: none;">
-            Now gathering,<br>
-            Now scattering,<br>
-            Fireflies over the river.<br>
-            <span style="float:right">- Sooiku Shigematsu</span>
+            The crow has flown away:<br>
+            swaying in the evening sun,<br>
+            a leafless tree.<br>
+            <span style="float:right">- Natsume Soseki</span>
         </p>
       </aside>
       <div id=haiku-info-container>
         <h1 class="faq">What are Haiku?</h1>
         <p class="pertinant-information">
-          <strong>Haiku</strong> are brief, imagistic poems traditionally depicting—or at 
+          <strong><a style="text-decoration: none;" href="https://www.thehaikufoundation.org/edwall/higginson_guidelines_for_writing_haiku.pdf">
+          Haiku</a></strong> are brief, imagistic poems traditionally depicting—or at 
           least alluding—to nature. Their lifecycle is tripartite within the reader - <i>
           language &#8594; image &#8594; feeling</i> - digested in unhurried succession. It is difficult 
           to ascertain what elements (and doses of each) are necessary to produce powerful 
@@ -188,10 +192,10 @@
           <h2 class="faq" id="bio-title" align="center">About the Developer</h2>
           <p class="pertinant-information thin-border" id="bio">
             <strong>Emmanuel Zen Price</strong>, born somewhere east of San Marino,
-            started taking web development seriously in Spring of 2018, before which
+            started taking web development seriously in Spring 2018, before which
             he was holed up in Upstate New York (a dismal place - if you can ignore the
             scenery), reading depressing novels, writing depressing short stories, taking
-            stock of his life.<br><br>
+            stock of his life. He currently resides in Providence, Rhode Island.<br><br>
             Emmanuel has always had a fascination with haiku and envisioned this site as a
             means of sharing his interest with the other denizens of the internet.
           </p>

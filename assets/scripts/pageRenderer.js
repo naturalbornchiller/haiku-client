@@ -18,14 +18,15 @@ function renderPage () {
 function renderAboutPage () {
     setTimeout(function () {
         $('#about').show('fade', 1000)
-        $('#nav-search').animate({opacity: '0'}, 600)
+        $('#nav-search').animate({opacity: '0'}, 400)
         $('#haiku-example').show('fade', 3000)
-        $('#nav-home').on('click', function () {
+        $('#nav-poems').on('click', function () {
             $(this).off()
+            $('#haiku-example').hide('fade', 1600)
             $('#about').hide('fade', 1500)
             renderHomePage()
         })
-    }, 2500)
+    }, 1500)
 }
 
 function renderHomePage () {
@@ -37,7 +38,7 @@ function renderHomePage () {
             $('#homepage').hide('fade', 1500)
             renderAboutPage()
         })
-    }, 2500)
+    }, 1500)
 }
 
 module.exports = {

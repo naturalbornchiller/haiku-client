@@ -3,9 +3,11 @@ require('../../../node_modules/jquery-ui-dist/jquery-ui.js')
 const formRenderer = require('../formRenderer.js')
 const navRenderer = require('../navRenderer.js')
 const pageRenderer = require('../pageRenderer.js')
+const store = require('../store.js')
 
-const signinupSuccess = () => {
-    formRenderer.successAlert()
+const signinupSuccess = data => {
+    store.user = data.user
+    formRenderer.signinSuccessAlert()
     navRenderer.renderNav()
     pageRenderer.renderPage()
 }
@@ -15,7 +17,12 @@ const signinupFailure = error => {
     console.log('signupFailure ran. Error is', error)
 }
 
+const signoutSuccess = () => {
+    formRenderer.renderForms()
+}
+
 module.exports = {
     signinupSuccess,
-    signinupFailure
+    signinupFailure,
+    signoutSuccess
 }
