@@ -7,6 +7,7 @@ const store = require('../store.js')
 
 const signinupSuccess = data => {
     store.user = data.user
+    console.log(store.user)
     formRenderer.signinSuccessAlert()
     navRenderer.renderNav()
     pageRenderer.renderPage()
@@ -19,6 +20,7 @@ const signinupFailure = error => {
 
 const signoutSuccess = () => {
     formRenderer.renderForms()
+    formRenderer.signoutSuccessAlert()
 }
 
 module.exports = {

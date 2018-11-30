@@ -38,7 +38,7 @@ const onSignout = e => {
     e.preventDefault()
     console.log('onSignout')
     authApi.signout()
-        .then(console.log)
+        .then(authUi.signoutSuccess)
         .catch(console.log)
 }
 

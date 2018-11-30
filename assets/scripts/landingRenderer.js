@@ -8,6 +8,10 @@ function renderLanding () {
     $('#enter-message').show('fade', 3000)
     // fade in enter button
     $('#enter-button').show('fade', 4000)
+    horizontalRulePulse()
+}
+
+function horizontalRulePulse () {
     // make horizontal-rule 'pulse' on enter-button hover
     $('#enter-button').mouseover(function () {
         $('.landing-line').css('width', '100%')

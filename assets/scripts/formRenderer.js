@@ -6,10 +6,23 @@ const backgroundAuthColor = '#86C5F4'
 
 /** STANDALONES */
 function renderForms () {
-    $('#auth-form').show()
+    hideOtherPages()
+    setTimeout(function () {
+        showForms()
+    }, 400)
+}
+
+function hideOtherPages () {
+    $('#landing').hide('blind', 800)
+    $('#utility-nav').hide('fade', 500)
+    $('#homepage').hide('fade', 500)
+    $('#about').hide('fade', 500)
+    $('input').val('')
+}
+
+function showForms () {
+    $('#auth-form').show('fade', 500)
     $('body').animate({'background-color': backgroundAuthColor}, 2000)
-    $('#landing').hide('blind', 500)
-    $('#utility-nav, #poems, #about').hide('fade', 1000)
     // make input lines 'pulse' on field focus/unfocus
     $('input').focusin(function () {
         $(this).next('.field-line').css('width', '100%')
