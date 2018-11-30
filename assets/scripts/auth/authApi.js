@@ -6,7 +6,7 @@ const store = require('../store.js')
 const signup = data => {
     const { email, username, password, password_confirmation } = data
     return $.ajax({
-        url: `${config.apiUrl}/sign-up`,
+        url: `${config.apiUrl}sign-up`,
         method: 'POST',
         data: {
             credentials: {
@@ -22,7 +22,7 @@ const signup = data => {
 const signin = data => {
     const { username, password } = data
     return $.ajax({
-        url: `${config.apiUrl}/sign-in`,
+        url: `${config.apiUrl}sign-in`,
         method: 'POST',
         data: {
             credentials: {
@@ -35,7 +35,7 @@ const signin = data => {
 
 const signout = () => {
     return $.ajax({
-        url: `${config.apiUrl}/sign-out`,
+        url: `${config.apiUrl}sign-out`,
         method: 'DELETE',
         headers: {
             Authorization: `Token token=${store.user.token}`
@@ -51,7 +51,7 @@ const changePassword = data => {
     }
 
     return $.ajax({
-        url: `${config.apiUrl}/change-password`,
+        url: `${config.apiUrl}change-password`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${store.user.token}`
