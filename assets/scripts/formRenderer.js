@@ -32,6 +32,7 @@ function showForms () {
 }
 
 // ALERTS
+const signupSuccessAlert = () => toastr.success('Now type in your credentials.', 'Success!')
 const signinSuccessAlert = () => toastr.success(`Welcome, @${store.username}`)
 const signoutSuccessAlert = () => toastr.success(`See you soon, @${store.username}!`)
 const signoutFailureAlert = () => toastr.error('Check connection and try again', 'Error')
@@ -76,6 +77,7 @@ function onExitEmptyFormField () {
 
 module.exports = {
     renderForms,
+    signupSuccessAlert,
     signinSuccessAlert,
     signoutSuccessAlert,
     signoutFailureAlert,

@@ -8,9 +8,14 @@ const store = require('../store.js')
 const signinupFailure = () => formRenderer.invalidSubmitAlerts()
 const signinupSuccess = data => {
     store.user = data.user
-    formRenderer.signinSuccessAlert()
-    navRenderer.renderNav()
-    pageRenderer.renderPage()
+    if (store.newUser) {
+        formRenderer.signupSuccessAlert()
+        $('#nav-signin-tab').trigger('click')
+    } else {
+        formRenderer.signinSuccessAlert()
+        navRenderer.renderNav()
+        pageRenderer.renderPage()
+    }
 }
 
 const signoutFailure = () => formRenderer.signoutFailureAlert()

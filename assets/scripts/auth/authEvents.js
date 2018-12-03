@@ -5,14 +5,13 @@ const store = require('../store.js')
 
 const onSignup = e => {
     e.preventDefault()
-    const data = {}
-    data.email = $('#signup-email').val()
-    data.username = $('#signup-username').val()
-    data.password = $('#signup-password').val()
-    data.password_confirmation = $('#signup-confirmation').val()
-    // store username and password mismatch
-    store.passwordMismatch = data.password !== data.password_confirmation
-    store.username = data.username
+    const data = { credentials: {} }
+    data.credentials.email = $('#signup-email').val()
+    data.credentials.username = $('#signup-username').val()
+    data.credentials.password = $('#signup-password').val()
+    data.credentials.password_confirmation = $('#signup-confirmation').val()
+    // store username, userType, and password mismatch
+    store.passwordMismatch = data.credentials.password !== data.credentials.password_confirmation
     store.newUser = true
 
     authApi.signup(data)
@@ -22,11 +21,11 @@ const onSignup = e => {
 
 const onSignin = e => {
     e.preventDefault()
-    const data = {}
-    data.username = $('#signin-username').val()
-    data.password = $('#signin-password').val()
+    const data = { credentials: {} }
+    data.credentials.username = $('#signin-username').val()
+    data.credentials.password = $('#signin-password').val()
     // store username and userType
-    store.username = data.username
+    store.username = data.credentials.username
     store.newUser = false
 
     authApi.signin(data)
@@ -46,6 +45,7 @@ const onChangePassword = e => {
     const data = { passwords: {} }
     data.passwords.old = $('#old-password').val()
     data.passwords.new = $('#new-password').val()
+    console.log(data)
     authApi.changePassword(data)
         .then(authUi.changePasswordSuccess)
         .catch(authUi.changePasswordFailure)

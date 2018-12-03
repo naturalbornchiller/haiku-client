@@ -160,8 +160,11 @@ button:hover {
   letter-spacing: 4px;
   color: #fff;
   margin-right: -10px;
-  padding-left: 20px;
   padding-right: 20px;
+}
+#nav-poems-container, #nav-poets-container,
+#nav-about-container, #nav-search-container {
+  margin-left: 2vw;
 }
 #nav-search {
   color: #fff;
@@ -189,7 +192,13 @@ button:hover {
 :-ms-input-placeholder {  
   font-style: italic; 
 }
-
+.col-form-label {
+  padding-bottom: calc(0.375rem + 1px);
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: 1.5;
+  margin-top: -2px;
+}
 // PAGES
 /* ABOUT */
 #about {
@@ -227,6 +236,7 @@ button:hover {
   margin-left: auto;
   font-family: $haiku_font;
   letter-spacing: .1em;
+  line-height: 2.4em;
   width: 45vw;
   font-size: 27px;
   margin-top: 20px;
@@ -244,14 +254,13 @@ button:hover {
   margin: 0 auto;
   margin-bottom: 50px;
   margin-top: 8vw;
+  padding-right: 40vw;
   width: 80vw;
   height: 20vw;
 }
 #developer-info-container {
   align-self: flex-start;
   text-align: justify;
-  padding-left: 12vw;
-  padding-right: 12vw;
 }
 #bio {
   padding: 30px;

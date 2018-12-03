@@ -15,8 +15,4 @@ $(() => {
   $('#confirm-password-change').on('click', authEvents.onChangePassword)
   // alert that form field is empty
   $('input').on('blur', formRenderer.onExitEmptyFormField)
-
-  // About
-
-  // Homepage
 })
