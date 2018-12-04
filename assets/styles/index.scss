@@ -207,8 +207,8 @@ button:hover {
 .cherry-branch-bg {
   background-image: url('public/cherry_branch2.png');
   background-repeat: no-repeat;
-  background-position: -30% 230%;
-  background-size: 50vw;
+  background-position: -30% 340%;
+  background-size: 52vw;
   content: "";
   z-index: -1;
 }
@@ -227,16 +227,18 @@ button:hover {
   width: 45vw;
   margin-left: auto;
 }
-
 #kigo-info-container {
   width: 30vw;
 }
-
 #haiku-example-container {
   margin-left: auto;
   font-family: $haiku_font;
   letter-spacing: .1em;
+<<<<<<< HEAD
   line-height: 2.4em;
+=======
+  line-height: 2.3em;
+>>>>>>> feature
   width: 45vw;
   font-size: 27px;
   margin-top: 20px;
@@ -253,14 +255,12 @@ button:hover {
   align-items: flex-start;
   margin: 0 auto;
   margin-bottom: 50px;
-  margin-top: 8vw;
-  padding-right: 40vw;
+  margin-top: 10vw;
   width: 80vw;
   height: 20vw;
 }
 #developer-info-container {
   align-self: flex-start;
-  text-align: justify;
 }
 #bio {
   padding: 30px;

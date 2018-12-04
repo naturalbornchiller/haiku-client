@@ -100,21 +100,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <a class="navbar-brand nav-wordmark" href="#">kigo</a>
           <ul class="navbar-nav">
-              <li class="nav-item" id="nav-poems-container">
+              <li class="nav-item">
                   <a class="nav-link" id="nav-poems" href="javascript:void(0)">poems</a>
               </li>
           </ul>
           <ul class="navbar-nav">
-              <li class="nav-item" id="nav-poets-container">
-                  <a class="nav-link" id="nav-poets" href="javascript:void(0)">poets</a>
-              </li>
-          </ul>
-          <ul class="navbar-nav" id="nav-about-container">
               <li class="nav-item">
                   <a class="nav-link" id="nav-about" href="javascript:void(0)">about</a>
               </li>
           </ul>
-          <form class="form-inline" id="nav-search-container">
+          <form class="form-inline">
               <div class="md-form my-0">
                 <input id="nav-search" class="form-control-sm mr-sm-2" type="text" placeholder="search by title" aria-label="Search">
               </div>
@@ -141,26 +136,25 @@
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="form-group">
-                    <label for="oldPassword" class="col-form-label">Old Password:</label>
-                    <input type="password" class="form-control" id="old-password">
-                  </div>
-                  <div class="form-group">
-                    <label for="newPassword" class="col-form-label">New Password:</label>
-                    <input type="password" class="form-control" id="new-password">
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer" style="margin: 0 auto;">
-                <button type="button" id="confirm-password-change">Change Password</button>
-              </div>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="oldPassword" class="col-form-label">Old Password:</label>
+                  <input type="password" class="form-control" id="old-password">
+                </div>
+                <div class="form-group">
+                  <label for="newPassword" class="col-form-label">New Password:</label>
+                  <input type="password" class="form-control" id="new-password">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+              <button type="button" id="confirm-password-change">Change Password</button>
+            </div>
         </div>
       </div>
   </div>
@@ -223,7 +217,7 @@
     </div>
     <div class="developer-info-super-container">
         <div id="developer-info-container">
-          <h2 class="faq" id="bio-title" align="center">About the Developer</h2>
+          <h2 class="faq" id="bio-title" align="left">About the Developer</h2>
           <p class="pertinant-information thin-border" id="bio">
             <strong>Emmanuel Zen Price</strong>, born somewhere east of San Marino,
             started taking web development seriously in Spring 2018, before which
