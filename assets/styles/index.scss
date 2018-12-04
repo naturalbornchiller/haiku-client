@@ -207,7 +207,7 @@ button:hover {
 .cherry-branch-bg {
   background-image: url('public/cherry_branch2.png');
   background-repeat: no-repeat;
-  background-position: -30% 340%;
+  background-position: -30% 342%;
   background-size: 52vw;
   content: "";
   z-index: -1;
@@ -243,6 +243,9 @@ button:hover {
   font-size: 27px;
   margin-top: 20px;
   padding: 5vw;
+}
+#haiku-example {
+  font-size: 32px;
 }
 .faq {
   font-weight: 800;
