@@ -236,9 +236,9 @@ button:hover {
   letter-spacing: .1em;
   line-height: 2.3em;
   width: 45vw;
-  font-size: 23px;
+  font-size: 25px;
   margin-top: -1px;
-  padding: 9vw;
+  padding: 8vw;
 }
 .faq {
   font-weight: 800;
@@ -291,6 +291,7 @@ button:hover {
   padding: 1vw;
 }
 .haiku-display {
+  position: relative;
   height: 40vw;
   width: 60vw;
   margin: 0 auto;
@@ -310,6 +311,18 @@ button:hover {
 }
 .haiku-author {
   text-align: center;
+}
+#left-arrow {
+  position: absolute;
+  left: 4vw;
+  font-size: 3em;
+  top: 44%;
+}
+#right-arrow {
+  position: absolute;
+  right: 4vw;
+  font-size: 3em;
+  top: 44%;
 }
 
 

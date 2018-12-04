@@ -24,7 +24,7 @@ const signoutSuccess = () => {
     formRenderer.signoutSuccessAlert()
 }
 
-const changePasswordFailure = () => pageRenderer.invalidSubmitAlerts
+const changePasswordFailure = () => pageRenderer.invalidSubmitAlerts()
 const changePasswordSuccess = () => {
     $('.modal').modal('hide')
     pageRenderer.changePasswordSuccessAlert()

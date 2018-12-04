@@ -58,7 +58,9 @@ function invalidSubmitAlerts () {
         setTimeout(function () {
             $('#confirm-password').removeClass('text-danger')
         }, 2000)
-    } else { // alert that email or password is incorrect
+    } else if (store.newUser) { // alert that email or password is incorrect
+        toastr.error('Try a different email or username')
+    } else {
         toastr.error('Incorrect email or password')
     }
 }
