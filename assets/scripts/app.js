@@ -1,5 +1,6 @@
 'use strict'
 const authEvents = require('./auth/authEvents.js')
+const resourceEvents = require('./resources/resourceEvents.js')
 const formRenderer = require('./formRenderer.js')
 const landingRenderer = require('./landingRenderer.js')
 
@@ -15,4 +16,7 @@ $(() => {
   $('#confirm-password-change').on('click', authEvents.onChangePassword)
   // alert that form field is empty
   $('input').on('blur', formRenderer.onExitEmptyFormField)
+
+  // Resource
+  $('#left-arrow').on('click', resourceEvents.onLeftArrowClick)
 })
