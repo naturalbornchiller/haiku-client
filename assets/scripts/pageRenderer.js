@@ -46,7 +46,7 @@ function renderHomePage () {
 
 function loadResourceActions () {
     // Resource
-    $('#left-arrow').on('click', resourceEvents.onLeftArrow)
+    $('#drift-arrow').on('click', resourceEvents.onDriftArrow)
 }
 
 // ALERTS

@@ -4,15 +4,18 @@ const resourceUi = require('./resourceUi.js')
 
 const onLoadRandomResource = () => {
     resourceApi.loadRandomResource()
-        .then(resourceUi.loadRandomResourceSuccess)
+        .then(resourceUi.onLoadRandomResourceSuccess)
         .catch(console.log)
 }
 
-const onLeftArrow = e => {
+const onDriftArrow = e => {
     e.preventDefault()
+    resourceApi.loadRandomResource()
+        .then(resourceUi.onDriftArrowSuccess)
+        .then(console.log)
 }
 
 module.exports = {
     onLoadRandomResource,
-    onLeftArrow
+    onDriftArrow
 }
