@@ -3,6 +3,7 @@
 /* eslint-disable one-var */
 /* eslint-disable indent */
 require('jquery-ui-dist/jquery-ui')
+const resourceEvents = require('./resources/resourceEvents.js')
 const toastr = require('toastr/build/toastr.min')
 const store = require('./store.js')
 
@@ -38,7 +39,14 @@ function renderHomePage () {
             $('#homepage').hide('fade', 1500)
             renderAboutPage()
         })
+        resourceEvents.onLoadRandomResource()
+        loadResourceActions()
     }, 1500)
+}
+
+function loadResourceActions () {
+    // Resource
+    $('#left-arrow').on('click', resourceEvents.onLeftArrow)
 }
 
 // ALERTS
