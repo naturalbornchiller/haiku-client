@@ -14,6 +14,8 @@ function renderPage () {
     } else { // else show 'homepage'
         renderHomePage()
     }
+    loadResourceActions()
+    addAccordionToPlus()
 }
 
 function renderAboutPage () {
@@ -36,13 +38,18 @@ function renderHomePage () {
         $('#nav-search').animate({opacity: '1'}, 1000)
         $('#nav-about').on('click', function () {
             $(this).off()
+            shrinkAccordion()
             $('#homepage').hide('fade', 1500)
             renderAboutPage()
         })
         resourceEvents.onLoadRandomResource()
-        loadResourceActions()
-        addAccordionToPlus()
     }, 1500)
+}
+
+function shrinkAccordion () {
+    $('.plus-minus-super-container').removeClass('opened')
+    $('#sidebar').animate({left: '21vw', width: '5vw'}, 600)
+    $('#sidenav').hide('slide', {direction: 'right'}, 500)
 }
 
 function loadResourceActions () {
