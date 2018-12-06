@@ -41,12 +41,26 @@ function renderHomePage () {
         })
         resourceEvents.onLoadRandomResource()
         loadResourceActions()
+        addAccordionToPlus()
     }, 1500)
 }
 
 function loadResourceActions () {
     // Resource
     $('#drift-arrow').on('click', resourceEvents.onDriftArrow)
+}
+
+function addAccordionToPlus () {
+    $('.plus-minus-super-container').on('click', function () {
+        $(this).toggleClass('opened')
+        if (this.classList.contains('opened')) {
+            $('#sidebar').animate({left: '18vw', width: '8vw'}, 600)
+            $('#sidenav').show('slide', {direction: 'right'}, 300)
+        } else {
+            $('#sidebar').animate({left: '21vw', width: '5vw'}, 600)
+            $('#sidenav').hide('slide', {direction: 'right'}, 500)
+        }
+    })
 }
 
 // ALERTS
