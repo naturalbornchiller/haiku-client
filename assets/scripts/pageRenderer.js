@@ -39,11 +39,18 @@ function renderHomePage () {
         $('#nav-about').on('click', function () {
             $(this).off()
             shrinkAccordion()
+            hideOneHaiku()
             $('#homepage').hide('fade', 1500)
             renderAboutPage()
         })
         resourceEvents.onLoadRandomResource()
     }, 1500)
+}
+
+function hideOneHaiku () {
+    $('#one-haiku-title').hide('slide', {direction: 'right'}, 500)
+    $('#one-haiku-content').hide('slide', {direction: 'right'}, 500)
+    $('#one-haiku-author').hide('slide', {direction: 'right'}, 500)
 }
 
 function shrinkAccordion () {
