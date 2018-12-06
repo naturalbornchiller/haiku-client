@@ -739,14 +739,14 @@ ADAPTED FROM codepen animation by Hektor Wallin
   top: 52%;
   transform: translateX(-50%) translateY(-50%);
   transition: transform .1s;
-  width: 16px;
+  width: 21px;
   
   $transition-time: .15s;
   
   &-top,
   &-bottom {
     background-color: #000;
-    height: 2px;
+    height: 3px;
     left: -5px;
     position: absolute;
     top: 50%;
