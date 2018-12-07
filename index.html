@@ -164,10 +164,10 @@
     <div class="haiku-display-container">
       <aside class="thin-border3" id="sidebar">
         <ul id="sidenav">
-          <li class="hvr-float-shadow">drift</li>
-          <li class="hvr-float-shadow">poets</li>
-          <li class="hvr-float-shadow">my poems</li>
-          <li class="hvr-float-shadow">write</li>
+          <li class="hvr-float-shadow" id="sidenav-drift">drift</li>
+          <li class="hvr-float-shadow" id="sidenav-poets">poets</li>
+          <li class="hvr-float-shadow" id="sidenav-mypoems">my poems</li>
+          <li class="hvr-float-shadow" id="sidenav-write">write</li>
         </ul>
       </aside>
       <section class="haiku-display thin-border2">
@@ -177,35 +177,37 @@
               <div class="vertical"></div>
             </div>
         </div>
-        <!-- DRIFT -->
-        <div id="drift-display" style="display: none;">
-          <h2 id="one-haiku-title" align="center" style="display: none;"></h2>
-          <div class="arrow" id='drift-arrow'>
-            <div class="arrow-top"></div>
-            <div class="arrow-bottom"></div>
+        <div id="current-panel">
+          <!-- DRIFT -->
+          <div id="drift-display">
+            <h2 id="one-haiku-title" align="center" style="display: none;"></h2>
+            <div class="arrow" id='drift-arrow'>
+              <div class="arrow-top"></div>
+              <div class="arrow-bottom"></div>
+            </div>
+            <p id="one-haiku-content" style="display: none;">
+              Lorem ipsem dolores:<br>
+              miles nifender contram<br>
+              roshka di monopi.
+            </p>
+            <p id="one-haiku-author" style="display: none;"><a>by Akamana Banana</a></p>
           </div>
-          <p id="one-haiku-content" style="display: none;">
-            Lorem ipsem dolores:<br>
-            miles nifender contram<br>
-            roshka di monopi.
-          </p>
-          <p id="one-haiku-author" style="display: none;"><a>by Akamana Banana</a></p>
-        </div>
-        <!-- WRITE -->
-        <div id="write-display">
-          <h3 style="text-align: center; padding-top: 7vw;"><i>Write Your Own Haiku!</i></h3>
-          <form style="padding-left: 30%; padding-top: 5vw;">
-            <div class="field">
-              <input style="width: 15vw;" type="text" placeholder="First line" id="line-1">
-            </div>
-            <div class="field" style="padding: 2vw;">
-              <input style="width: 20vw;" type="text" placeholder="Second line" id="line-2">
-            </div>
-            <div class="field">
-              <input style="width: 15vw;" type="text" placeholder="Last line" id="line-3">
-            </div>
-            <button type="button" id="publish">Publish</button>
-          </form>
+          <!-- WRITE -->
+          <div id="write-display" style="display: none;">
+            <h3 style="text-align: center; padding-top: 7vw;"><i>Write Your Own Haiku!</i></h3>
+            <form style="padding-left: 30%; padding-top: 5vw;">
+              <div class="field">
+                <input style="width: 15vw;" type="text" placeholder="First line" id="line-1">
+              </div>
+              <div class="field" style="padding: 2vw;">
+                <input style="width: 20vw;" type="text" placeholder="Second line" id="line-2">
+              </div>
+              <div class="field">
+                <input style="width: 15vw;" type="text" placeholder="Last line" id="line-3">
+              </div>
+              <button type="button" id="publish">Publish</button>
+            </form>
+          </div>
         </div>
       </section>
     </div>

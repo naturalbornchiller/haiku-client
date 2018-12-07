@@ -16,6 +16,20 @@ function renderPage () {
     }
     loadResourceActions()
     addAccordionToPlus()
+    sideNavigation()
+}
+
+function sideNavigation () {
+    $('#sidenav-drift').on('click', function () {
+        $(this).off()
+        $('#current-panel').children().hide('fade', 500)
+        $('#drift-display').show()
+    })
+    $('#sidenav-write').on('click', function () {
+        $(this).off()
+        $('#current-panel').children().hide('fade', 500)
+        $('#write-display').show()
+    })
 }
 
 function renderAboutPage () {

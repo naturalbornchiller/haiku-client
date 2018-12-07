@@ -357,6 +357,15 @@ button:hover {
   left: 4vw;
 }
 // write
+
+
+
+
+
+/*
+FANCY PUBLISH BUTTON borrowed and adapted
+from codepen animation by Vincent Durand
+*/
 #publish {
   margin: 5vw;
   background:rgb(8, 21, 38);
@@ -395,13 +404,9 @@ button:hover {
   transition:800ms ease all;
 }
 
-
-
-
-
 /* 
-FANCY NEXT-ARROW ON ONE POEM
-ADAPTED FROM codepen animation by Hektor Wallin
+FANCY NEXT-ARROW borrowed and adapted
+from codepen animation by Hektor Wallin
 */
 .arrow {
   cursor: pointer;
