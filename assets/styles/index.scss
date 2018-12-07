@@ -290,6 +290,7 @@ button:hover {
   margin-top: 8vw;
   padding: 1vw;
 }
+// sidebar
 #sidebar {
   top: 9vw;
   left: 18vw;
@@ -306,6 +307,7 @@ button:hover {
   cursor: pointer;
   margin-top: 6.5vw;
 }
+// display one
 .haiku-display {
   background: #ade6d8;
   position: relative;
@@ -354,6 +356,45 @@ button:hover {
 #left-arrow {
   left: 4vw;
 }
+// write
+#publish {
+  margin: 5vw;
+  background:rgb(8, 21, 38);
+  color:#ade6d8;
+  border:none;
+  position:relative;
+  height:39px;
+  font-size:1em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+#publish:hover {
+  background:#ade6d8;
+  color:rgb(8, 21, 38);
+}
+#publish:before, #publish:after {
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: rgb(8, 21, 38);
+  transition:400ms ease all;
+}
+#publish:after {
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+#publish:hover:before,#publish:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
 
 
 
