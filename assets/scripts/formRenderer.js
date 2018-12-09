@@ -65,6 +65,19 @@ function invalidSubmitAlerts () {
     }
 }
 
+function validateHaiku (...lines) {
+    let valid = true
+    let emptyLine = false
+    lines.forEach(line => {
+        if (!line) {
+            valid = false
+            emptyLine = true
+        }
+    })
+    emptyLine && toastr.error('All lines must be filled')
+    return valid
+}
+
 /** CALLBACKS */
 // Turns targeted empty formField red for 2seconds
 function onExitEmptyFormField () {
@@ -84,7 +97,8 @@ module.exports = {
     signoutSuccessAlert,
     signoutFailureAlert,
     invalidSubmitAlerts,
-    onExitEmptyFormField
+    onExitEmptyFormField,
+    validateHaiku
 }
 
 // MOVE TO NEW FILE

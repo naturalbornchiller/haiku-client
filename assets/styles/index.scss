@@ -331,18 +331,31 @@ button:hover {
   box-shadow:1px 1px 6px #888;
   letter-spacing: .07em;
 }
+#one-haiku-title-container {
+  margin: 0 auto;
+    margin-top: 3vw;
+    width: 60%;
+}
 #one-haiku-title {
   text-transform: capitalize;
-  padding-top: 3.55em;
 }
-#one-haiku-content {
+#one-haiku-content-container {
+  position: absolute;
   text-align: center;
+  line-height: 3.5em;
   font-size: 1.5em;
-  margin: 8vw;
+  left: 19%;
+  top: 31%;
+  width: 433px;
+  height: 252px;
 }
 #one-haiku-author {
   text-align: center;
   cursor: pointer;
+  position: absolute;
+  bottom: 5%;
+  left: 41%;
+  right: 41%;
 }
 #left-arrow, #right-arrow {
   position: absolute;

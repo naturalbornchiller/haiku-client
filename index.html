@@ -166,7 +166,7 @@
         <ul id="sidenav">
           <li class="hvr-float-shadow" id="sidenav-drift">drift</li>
           <li class="hvr-float-shadow" id="sidenav-poets">poets</li>
-          <li class="hvr-float-shadow" id="sidenav-mypoems">my poems</li>
+          <li class="hvr-float-shadow" id="sidenav-myhaiku">my poems</li>
           <li class="hvr-float-shadow" id="sidenav-write">write</li>
         </ul>
       </aside>
@@ -180,33 +180,41 @@
         <div id="current-panel">
           <!-- DRIFT -->
           <div id="drift-display">
-            <h2 id="one-haiku-title" align="center" style="display: none;"></h2>
+            <div id="one-haiku-title-container">
+              <h2 id="one-haiku-title" align="center" style="display: none;"></h2>
+            </div>
             <div class="arrow" id='drift-arrow'>
               <div class="arrow-top"></div>
               <div class="arrow-bottom"></div>
             </div>
-            <p id="one-haiku-content" style="display: none;">
-              Lorem ipsem dolores:<br>
-              miles nifender contram<br>
-              roshka di monopi.
-            </p>
+            <div id="one-haiku-content-container">
+              <p id="one-haiku-content" style="display: none;">
+                Lorem ipsem dolores:<br>
+                miles nifender contram<br>
+                roshka di monopi.
+              </p>
+            </div>
             <p id="one-haiku-author" style="display: none;"><a>by Akamana Banana</a></p>
           </div>
           <!-- WRITE -->
           <div id="write-display" style="display: none;">
             <h3 style="text-align: center; padding-top: 7vw;"><i>Write Your Own Haiku!</i></h3>
-            <form style="padding-left: 30%; padding-top: 5vw;">
+            <form style="padding-left: 30%; padding-top: 5vw;" id="write-form">
               <div class="field">
-                <input style="width: 15vw;" type="text" placeholder="First line" id="line-1">
+                <input style="width: 15vw;" type="text" placeholder="First line" id="line-1" max-length="40" required>
               </div>
               <div class="field" style="padding: 2vw;">
-                <input style="width: 20vw;" type="text" placeholder="Second line" id="line-2">
+                <input style="width: 20vw;" type="text" placeholder="Second line" id="line-2" max-length="70" required>
               </div>
               <div class="field">
-                <input style="width: 15vw;" type="text" placeholder="Last line" id="line-3">
+                <input style="width: 15vw;" type="text" placeholder="Last line" id="line-3" max-length="40" required>
               </div>
-              <button type="button" id="publish">Publish</button>
+              <button type="submit" id="publish">Publish</button>
             </form>
+          </div>
+          <!-- MYHAIKU -->
+          <div id="myhaiku-display">
+            
           </div>
         </div>
       </section>

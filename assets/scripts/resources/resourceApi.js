@@ -3,7 +3,6 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const loadRandomResource = () => {
-    console.log('In load resource!')
     return $.ajax({
         url: `${config.apiUrl}random`,
         method: 'GET',
@@ -13,6 +12,29 @@ const loadRandomResource = () => {
     })
 }
 
+const publishHaiku = data => {
+    return $.ajax({
+        url: `${config.apiUrl}haiku`,
+        method: 'POST',
+        headers: {
+            Authorization: `Token token=${store.user.token}`
+        },
+        data
+    })
+}
+
+const showMyHaiku = () => {
+    return $.ajax({
+        url: `${config.apiUrl}haiky`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token token=${store.user.token}`
+        }
+    })
+}
+
 module.exports = {
-    loadRandomResource
+    loadRandomResource,
+    publishHaiku,
+    showMyHaiku
 }

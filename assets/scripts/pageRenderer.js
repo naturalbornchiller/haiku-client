@@ -22,6 +22,7 @@ function renderPage () {
 function sideNavigation () {
     sideNavDrift()
     sideNavWrite()
+    sideNavMyHaiku()
 }
 
 const sideNavDrift = () => {
@@ -30,6 +31,7 @@ const sideNavDrift = () => {
             $('#drift-display').show('slow')
             $('#sidenav-drift').off()
             sideNavWrite()
+            sideNavMyHaiku()
         })
     })
 }
@@ -39,6 +41,19 @@ const sideNavWrite = () => {
         $('#current-panel').children().hide('slow').promise().done(function () {
             $('#write-display').show('slow')
             $('#sidenav-write').off()
+            sideNavDrift()
+            sideNavMyHaiku()
+        })
+    })
+}
+
+const sideNavMyHaiku = () => {
+    $('#sidenav-myhaiku').on('click', function () {
+        $('#current-panel').children().hide('slow').promise().done(function () {
+            $('#myhaiku-display').show('slow')
+            resourceEvents.onShowMyHaiku()
+            $('#sidenav-myhaiku').off()
+            sideNavWrite()
             sideNavDrift()
         })
     })
@@ -88,6 +103,7 @@ function shrinkAccordion () {
 function loadResourceActions () {
     // Resource
     $('#drift-arrow').on('click', resourceEvents.onDriftArrow)
+    $('#publish').on('click', resourceEvents.onPublishHaiku)
 }
 
 function addAccordionToPlus () {
