@@ -25,7 +25,7 @@ const publishHaiku = data => {
 
 const showMyHaiku = () => {
     return $.ajax({
-        url: `${config.apiUrl}haiky`,
+        url: `${config.apiUrl}haiku`,
         method: 'GET',
         headers: {
             Authorization: `Token token=${store.user.token}`

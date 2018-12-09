@@ -29,12 +29,20 @@ const onPublishHaiku = e => {
         .catch(resourceUi.onPublishHaikuFailure)
 }
 
-const onShowMyHaiku = e => {
-    e.preventDefault()
+const onShowMyHaiku = () => {
     resourceApi.showMyHaiku()
         .then(resourceUi.onShowMyHaikuSuccess)
         .catch(console.log)
 }
+
+const onRemoveHaiku = e => {
+    e.preventDefault()
+    const dataId = $(event.target).closest('section').data('id')
+    resourceApi.removeBook(dataId)
+      .then(() => onShowMyHaiku())
+      .catch(resourceUi.onRemoveHaikuFailure)
+}
+
 /*
 const haikuStandardizer = (...lines) => {
     const syllable = require('syllable')
@@ -48,5 +56,6 @@ module.exports = {
     onLoadRandomResource,
     onDriftArrow,
     onPublishHaiku,
-    onShowMyHaiku
+    onShowMyHaiku,
+    onRemoveHaiku
 }

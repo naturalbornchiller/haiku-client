@@ -104,6 +104,7 @@ function loadResourceActions () {
     // Resource
     $('#drift-arrow').on('click', resourceEvents.onDriftArrow)
     $('#publish').on('click', resourceEvents.onPublishHaiku)
+    $('.flex-item').on('click', 'button', resourceEvents.onRemoveHaiku)
 }
 
 function addAccordionToPlus () {

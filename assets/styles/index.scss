@@ -295,7 +295,7 @@ button:hover {
   top: 9vw;
   left: 18vw;
   position: absolute;
-  overflow: scroll;
+  overflow: auto;
   height: 40vw;
   width: 8vw;
   background: #add8e6;
@@ -372,7 +372,33 @@ button:hover {
 // write
 
 
-
+// myHaiku
+#myhaiku-display {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  height: 38vw;
+}
+.flex-container {
+  margin-left: auto;
+  width: 86%;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-around;
+  line-height: 30px;
+  min-height: min-content;
+}
+.flex-item {
+  background: white;
+  margin: 5px;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  flex: 1 0 auto;
+  height: 10vw;
+  width: 14vw;
+}
 
 
 /*
