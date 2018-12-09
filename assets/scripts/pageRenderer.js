@@ -20,15 +20,27 @@ function renderPage () {
 }
 
 function sideNavigation () {
+    sideNavDrift()
+    sideNavWrite()
+}
+
+const sideNavDrift = () => {
     $('#sidenav-drift').on('click', function () {
-        $(this).off()
-        $('#current-panel').children().hide('fade', 500)
-        $('#drift-display').show()
+        $('#current-panel').children().hide('slow').promise().done(function () {
+            $('#drift-display').show('slow')
+            $('#sidenav-drift').off()
+            sideNavWrite()
+        })
     })
+}
+
+const sideNavWrite = () => {
     $('#sidenav-write').on('click', function () {
-        $(this).off()
-        $('#current-panel').children().hide('fade', 500)
-        $('#write-display').show()
+        $('#current-panel').children().hide('slow').promise().done(function () {
+            $('#write-display').show('slow')
+            $('#sidenav-write').off()
+            sideNavDrift()
+        })
     })
 }
 
