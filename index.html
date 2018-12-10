@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+       <title>kigo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/css/mdb.min.css" />
+
+
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+</head>
+
+<body>
+  <!-- LANDING -->
+  <div id="landing">
+    <h1 class="landing-wordmark" style="display: none;"><strong>kigo</strong></h1>
+    <div class="line-box">
+        <div class="landing-line"></div>
+    </div>
+    <p id="enter-message" style="font-size: 20px; display: none;">The haiku weblog.</p>
+    <h3 class="hvr-float-shadow " id="enter-button" style="display: none;">Enter</h3>
+  </div>
+
+  <!-- AUTH -->
+  <div id="auth-form" style="display:none;">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-signup-tab" href="#nav-signup" data-toggle="tab" role="tab"
+        aria-controls="nav-signup" aria-selected="true">Sign Up</a>
+      <a class="nav-item nav-link" id="nav-signin-tab" href="#nav-signin" data-toggle="tab" role="tab" aria-controls="nav-signin"
+        aria-selected="false">Sign In</a>
+    </div>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane nav-link fade show active" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+        <form>
+          <label>
+            <p class="label-txt">Email</p>
+            <input class="input" id="signup-email" required type="email">
+            <div class="line-box">
+              <div class="field-line"></div>
+            </div>
+          </label>
+          <label>
+            <p class="label-txt">Username</p>
+            <input class="input" id="signup-username" required type="text">
+            <div class="line-box">
+              <div class="field-line"></div>
+            </div>
+          </label>
+          <label>
+            <p class="label-txt">Password</p>
+            <input class="input" id="signup-password" required type="password">
+            <div class="line-box">
+              <div class="field-line"></div>
+            </div>
+          </label>
+          <label>
+            <p class="label-txt" id="confirm-password">Password Confirmation</p>
+            <input class="input" id="signup-confirmation" required type="password">
+            <div class="line-box">
+              <div class="field-line"></div>
+            </div>
+          </label>
+          <button id="signup" type="submit">Sign Up</button>
+        </form>
+      </div>
+      <div class="tab-pane nav-link fade inactive" id="nav-signin" role="tabpanel" aria-labelledby="nav-signin-tab">
+        <form>
+          <label>
+            <p class="label-txt">Username</p>
+            <input class="input" id="signin-username" required type="text">
+            <div class="line-box">
+              <div class="field-line"></div>
+            </div>
+          </label>
+          <label>
+            <p class="label-txt">Password</p>
+            <input class="input" id="signin-password" required type="password">
+            <div class="line-box">
+              <div class="field-line"></div>
+            </div>
+          </label>
+          <button id="signin" type="submit">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <div id="utility-nav" style="display: none;">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar bg-dark top-nav-collapse">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <a class="navbar-brand nav-wordmark" href="#">kigo</a>
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" id="nav-poems" href="javascript:void(0)">poems</a>
+              </li>
+          </ul>
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" id="nav-about" href="javascript:void(0)">about</a>
+              </li>
+          </ul>
+          <form class="form-inline">
+              <div class="md-form my-0">
+                <input id="nav-search" class="form-control-sm mr-sm-2" type="text" placeholder="search by title" aria-label="Search">
+              </div>
+          </form>
+          <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span id="nav-greeting"></span>
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item waves-effect waves-light" data-toggle="modal" 
+                          data-target=".bd-example-modal-sm" id="change-password">Change Password</a>
+                <!-- <a class="dropdown-item waves-effect waves-light" id="change-username" href="#">Change Username</a> -->
+                <a class="dropdown-item waves-effect waves-light" id="signout">Sign Out</a>
+              </div>
+            </li>
+          </ul>
+      </div>
+  </nav>
+  </div>
+
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="oldPassword" class="col-form-label">Old Password:</label>
+                  <input type="password" class="form-control" id="old-password">
+                </div>
+                <div class="form-group">
+                  <label for="newPassword" class="col-form-label">New Password:</label>
+                  <input type="password" class="form-control" id="new-password">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+              <button type="button" id="confirm-password-change">Change Password</button>
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- HOME -->
+  <div id="homepage" style="display: none;">
+    <div class="haiku-display-container">
+      <aside class="thin-border3" id="sidebar">
+        <ul id="sidenav">
+          <li class="hvr-float-shadow" id="sidenav-drift">drift</li>
+          <li class="hvr-float-shadow" id="sidenav-poets">poets</li>
+          <li class="hvr-float-shadow" id="sidenav-myhaiku">my poems</li>
+          <li class="hvr-float-shadow" id="sidenav-write">write</li>
+        </ul>
+      </aside>
+      <section class="haiku-display thin-border2">
+        <div class="plus-minus-super-container hvr-wobble-vertical closed opened">
+            <div class="plus-minus-container">
+              <div class="horizontal"></div>
+              <div class="vertical"></div>
+            </div>
+        </div>
+        <div id="current-panel">
+          <!-- DRIFT -->
+          <div id="drift-display">
+            <div id="one-haiku-title-container">
+              <h2 id="one-haiku-title" align="center" style="display: none;"></h2>
+            </div>
+            <div class="arrow" id='drift-arrow'>
+              <div class="arrow-top"></div>
+              <div class="arrow-bottom"></div>
+            </div>
+            <div id="one-haiku-content-container">
+              <p id="one-haiku-content" style="display: none;">
+                Lorem ipsem dolores:<br>
+                miles nifender contram<br>
+                roshka di monopi.
+              </p>
+            </div>
+            <p id="one-haiku-author" style="display: none;"><a>by Akamana Banana</a></p>
+          </div>
+          <!-- WRITE -->
+          <div id="write-display" style="display: none;">
+            <h3 style="text-align: center; padding-top: 7vw;"><i>Write Your Own Haiku!</i></h3>
+            <form style="padding-left: 30%; padding-top: 5vw;" id="write-form">
+              <div class="field">
+                <input style="width: 15vw;" type="text" placeholder="First line" id="line-1" max-length="40" required>
+              </div>
+              <div class="field" style="padding: 2vw;">
+                <input style="width: 20vw;" type="text" placeholder="Second line" id="line-2" max-length="70" required>
+              </div>
+              <div class="field">
+                <input style="width: 15vw;" type="text" placeholder="Last line" id="line-3" max-length="40" required>
+              </div>
+              <button type="submit" id="publish">Publish</button>
+            </form>
+          </div>
+          <!-- MYHAIKU -->
+          <div id="myhaiku-display" style="display: none;">
+            <!--view all-->
+            <div class="flex-container">
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+              <div class="flex-item">4</div>
+              <div class="flex-item">5</div>
+              <div class="flex-item">6</div>
+              <div class="flex-item">7</div>
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+              <div class="flex-item">4</div>
+              <div class="flex-item">5</div>
+              <div class="flex-item">6</div>
+              <div class="flex-item">7</div>
+            </div>
+            <!--on view click-->
+            <div class="view-haiku" style="display: none;">
+              <p id="back-arrow">&#8592;back</p>
+              <div class="one-haiku-content-container">
+                <p class="one-haiku-content">
+                  Lorem ipsem dolores:<br>
+                  miles nifender contram<br>
+                  roshka di monopi.
+                </p>
+              </div>
+              <a id="update-from-view" class="updatePoemButton">update</a>
+              <a id="remove-from-view" class="removePoemButton">remove</a>
+            </div>
+            <!--on update click-->
+            <div class="update-haiku" style="display: none;">
+              <p id="back-arrow-2">&#8592;back</p>
+              <form style="padding-left: 30%; padding-top: 5vw;" id="update-form">
+                <div class="field">
+                  <input style="width: 15vw;" type="text" placeholder="First line" id="update-line-1">
+                </div>
+                <div class="field" style="padding: 2vw;">
+                  <input style="width: 20vw;" type="text" placeholder="Second line" id="update-line-2">
+                </div>
+                <div class="field">
+                  <input style="width: 15vw;" type="text" placeholder="Last line" id="update-line-3">
+                </div>
+                <button type="submit" id="update">update</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" style="display: none;">
+    <div class="haiku-info-super-container cherry-branch-bg">
+      <div id=kigo-info-container>
+        <h1 class='faq'>What is Kigo?</h1>
+        <p class="pertinant-information">
+          It's a site for sharing and reading <i>haiku</i>, a form of short, unrhymed, Japanese poem.
+          I chose this name, <strong>Kigo</strong> (季語 "season word") for it's significance as a recognizable 
+          mark of haiku. Kigo are words or phrases meant to evoke the season that a poem is 
+          set in (e.g., cherry blossoms are a common spring kigo in japanese poetry, whereas 
+          the moon is strongly associated with autumn)—references to nature's intrinsic and 
+          perennial symbols. A well-chosen kigo can ground the poem in an unknowable, yet 
+          universal time. In this way, without being prolix, it is able to connect its reader to 
+          the moment and place in which the poem is written.
+        </p>
+      </div>
+      <aside id="haiku-example-container">
+        <p id="haiku-example" style="display: none;">
+            The crow has flown away:<br>
+            swaying in the evening sun,<br>
+            a leafless tree.<br>
+            <span style="float:right">- Natsume Soseki</span>
+        </p>
+      </aside>
+      <div id=haiku-info-container>
+        <h1 class="faq">What are Haiku?</h1>
+        <p class="pertinant-information">
+          <strong><a style="text-decoration: none;" href="https://www.thehaikufoundation.org/edwall/higginson_guidelines_for_writing_haiku.pdf">
+          Haiku</a></strong> are brief, imagistic poems traditionally depicting—or at 
+          least alluding—to nature. Their lifecycle is tripartite within the reader - <i>
+          language &#8594; image &#8594; feeling</i> - digested in unhurried succession. It is difficult 
+          to ascertain what elements (and doses of each) are necessary to produce powerful 
+          haiku, but there are a number of things that can be kept in mind. A haiku, by nature, 
+          is a distillation of an experience: it is a mood and a moment in time. It reflects a 
+          fresh way of seeing that is unselfconscious, almost childlike. It should deal 
+          strictly in the immediate. Any references to setting, mood, or metaphor must be 
+          smuggled in. References to interpretation of any kind can be omitted entirely. 
+          Lastly, and perhaps most importantly, the haiku's language should be resonant, 
+          natural, and succinct.<br><br><i>"The poet pares away that which is supernumerary; what 
+          is left is haiku."</i>
+        </p>
+      </div>
+    </div>
+    <div class="developer-info-super-container">
+        <div id="developer-info-container">
+          <h2 class="faq" id="bio-title" align="left">About the Developer</h2>
+          <p class="pertinant-information thin-border" id="bio">
+            <strong>Emmanuel Zen Price</strong>, born somewhere east of San Marino,
+            started taking web development seriously in Spring 2018, before which
+            he was holed up in Upstate New York (a dismal place - if you can ignore the
+            scenery), reading depressing novels, writing depressing short stories, taking
+            stock of his life. He currently resides in Providence, Rhode Island.<br><br>
+            Emmanuel has always had a fascination with haiku and envisioned this site as a
+            means of sharing his interest with the other denizens of the internet.
+          </p>
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>
+
+<!-- UNUSED HTML-->
+<!-- <div id=haiku-guide-container>
+          <h3 class='faq'>Things to Avoid<br/>When Writing Haiku:</h3>
+          <p class="pertinant-information thin-border">
+            Philosophical statements<br>
+            Anthropomorphism<br>
+            Direct metaphor<br>
+            Personification<br>
+            Description<br>
+            Explanation<br>
+            Big words<br>
+            Opinion<br>
+            Simile<br>
+          </p>
+
+Don’t weep, insects –
+Lovers, stars themselves,
+Must part.
+- Kobayashi Issa
+
+I kill an ant
+and realize my three children
+have been watching.
+- Kato Shuson
+
+The lamp once out
+Cool stars enter
+The window frame.
+- Natsume Soseki
+
+
+        </div> -->
