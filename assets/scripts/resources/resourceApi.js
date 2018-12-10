@@ -55,10 +55,22 @@ const viewHaiku = id => {
     })
 }
 
+const updateHaiku = data => {
+    return $.ajax({
+        url: `${config.apiUrl}haiku/${store.dataId}`,
+        method: 'PATCH',
+        headers: {
+            Authorization: `Token token=${store.user.token}`
+        },
+        data
+    })
+}
+
 module.exports = {
     loadRandomResource,
     publishHaiku,
     showMyHaiku,
     removeHaiku,
-    viewHaiku
+    viewHaiku,
+    updateHaiku
 }

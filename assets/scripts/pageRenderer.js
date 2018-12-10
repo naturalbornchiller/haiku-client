@@ -104,10 +104,22 @@ function loadResourceActions () {
     $('#drift-arrow').on('click', resourceEvents.onDriftArrow)
     $('#publish').on('click', resourceEvents.onPublishHaiku)
     $('.flex-container, .view-haiku').on('click', '.removePoemButton', resourceEvents.onRemoveHaiku)
+    $('.view-haiku').on('click', '.updatePoemButton', function () {
+        $('.view-haiku').hide('fast')
+        $('.update-haiku').show('slow')
+        $('#update-line-1').val(store.haiku[0])
+        $('#update-line-2').val(store.haiku[1])
+        $('#update-line-3').val(store.haiku[2])
+    })
+    $('#update').on('click', resourceEvents.onUpdateHaiku)
     $('.flex-container').on('click', '.viewPoemButton', resourceEvents.onViewHaiku)
     $('#back-arrow').on('click', function () {
         $('.view-haiku').hide('fast')
         $('.flex-container').show('slow')
+    })
+    $('#back-arrow-2').on('click', function () {
+        $('.update-haiku').hide('fast')
+        $('.view-haiku').show('slow')
     })
 }
 

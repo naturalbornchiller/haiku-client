@@ -44,6 +44,19 @@ const onRemoveHaiku = e => {
       .catch(resourceUi.onRemoveHaikuFailure)
 }
 
+const onUpdateHaiku = e => {
+    e.preventDefault()
+    let data = { haiku: { title: '', content: '' } }
+    const line1 = $('#update-line-1').val()
+    const line2 = $('#update-line-2').val()
+    const line3 = $('#update-line-3').val()
+    data.haiku.content = `${line1}/${line2}/${line3}`
+    if (!formRenderer.validateHaiku(line1, line2, line3)) data = undefined
+    resourceApi.updateHaiku(resourceApi.updateHaiku)
+        .then(resourceUi.onPublishHaikuSuccess)
+        .catch(resourceUi.onPublishHaikuFailure)
+}
+
 const onViewHaiku = e => {
     e.preventDefault()
     const dataId = $(event.target).closest('section').data('id')
@@ -67,5 +80,6 @@ module.exports = {
     onPublishHaiku,
     onShowMyHaiku,
     onRemoveHaiku,
-    onViewHaiku
+    onViewHaiku,
+    onUpdateHaiku
 }

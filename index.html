@@ -214,6 +214,7 @@
           </div>
           <!-- MYHAIKU -->
           <div id="myhaiku-display" style="display: none;">
+            <!--view all-->
             <div class="flex-container">
               <div class="flex-item">1</div>
               <div class="flex-item">2</div>
@@ -240,7 +241,24 @@
                   roshka di monopi.
                 </p>
               </div>
+              <a id="update-from-view" class="updatePoemButton">update</a>
               <a id="remove-from-view" class="removePoemButton">remove</a>
+            </div>
+            <!--on update click-->
+            <div class="update-haiku" style="display: none;">
+              <p id="back-arrow-2">&#8592;back</p>
+              <form style="padding-left: 30%; padding-top: 5vw;" id="update-form">
+                <div class="field">
+                  <input style="width: 15vw;" type="text" placeholder="First line" id="update-line-1">
+                </div>
+                <div class="field" style="padding: 2vw;">
+                  <input style="width: 20vw;" type="text" placeholder="Second line" id="update-line-2">
+                </div>
+                <div class="field">
+                  <input style="width: 15vw;" type="text" placeholder="Last line" id="update-line-3">
+                </div>
+                <button type="submit" id="update">update</button>
+              </form>
             </div>
           </div>
         </div>

@@ -1,11 +1,13 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable indent */
 const toastr = require('toastr/build/toastr.min')
+const store = require('./store.js')
 const getRandomTime = () => Math.floor(300 + (600 - 300 + 1) * Math.random())
 const breakUpLines = stringHaiku => stringHaiku.split('/').join('<br>')
 
 const displayOnePoem = obj => {
     const haiku = breakUpLines(obj.haiku.content)
+    
     setTimeout(function () {
         $('#one-haiku-title').html(`${obj.haiku.title}`)
         $('#one-haiku-content').html(`${haiku}`)
@@ -26,6 +28,7 @@ const viewPoem = obj => {
     $('.flex-container').hide('fast')
     $('.view-haiku').show('slow')
     const haiku = breakUpLines(obj.haiku.content)
+    store.haiku = haiku.split('<br>')
     setTimeout(function () {
         $('.one-haiku-content').html(`${haiku}`)
     }, 400)

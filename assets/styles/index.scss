@@ -412,16 +412,21 @@ button:hover {
   font-size: 2em;
   line-height: 2em;
 }
-#remove-from-view {
+#remove-from-view, #update-from-view {
   position: absolute;
   bottom: 1vw;
-  left: 22vw;
   text-decoration: underline dotted;
   &:hover {
     font-style: italic;
   }
 }
-#back-arrow {
+#update-from-view {
+  left: 19vw;
+}
+#remove-from-view {
+  left: 25vw;
+}
+#back-arrow, #back-arrow-2 {
   position: absolute;
   top: 1vw;
   left: 1vw;
@@ -431,6 +436,15 @@ button:hover {
     color: blue;
     font-style: italic;
   }
+}
+
+// update
+#update-form {
+  padding-left: 38%;
+  padding-top: 15vw;
+}
+#update {
+  margin: 60px;
 }
 
 

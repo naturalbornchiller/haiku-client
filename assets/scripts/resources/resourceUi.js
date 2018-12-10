@@ -26,7 +26,6 @@ const onRemoveHaikuSuccess = () => {
 }
 
 const onLoadResourceFailure = () => resourceRenderer.loadResourceFailureAlert()
-
 module.exports = {
     onLoadRandomResourceSuccess,
     onDriftArrowSuccess,
