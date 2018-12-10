@@ -29,6 +29,7 @@ const viewPoem = obj => {
     $('.view-haiku').show('slow')
     const haiku = breakUpLines(obj.haiku.content)
     store.haiku = haiku.split('<br>')
+    store.title = obj.haiku.title
     setTimeout(function () {
         $('.one-haiku-content').html(`${haiku}`)
     }, 400)

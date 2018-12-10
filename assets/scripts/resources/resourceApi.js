@@ -56,6 +56,7 @@ const viewHaiku = id => {
 }
 
 const updateHaiku = data => {
+    console.log(data)
     return $.ajax({
         url: `${config.apiUrl}haiku/${store.dataId}`,
         method: 'PATCH',

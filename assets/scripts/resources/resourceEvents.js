@@ -1,4 +1,5 @@
 /* eslint-disable indent */
+const store = require('../store.js')
 const resourceApi = require('./resourceApi.js')
 const resourceUi = require('./resourceUi.js')
 const formRenderer = require('../formRenderer.js')
@@ -50,6 +51,7 @@ const onUpdateHaiku = e => {
     const line1 = $('#update-line-1').val()
     const line2 = $('#update-line-2').val()
     const line3 = $('#update-line-3').val()
+    data.haiku.title = store.title
     data.haiku.content = `${line1}/${line2}/${line3}`
     if (!formRenderer.validateHaiku(line1, line2, line3)) data = undefined
     resourceApi.updateHaiku(resourceApi.updateHaiku)
