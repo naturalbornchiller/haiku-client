@@ -3,18 +3,16 @@ const resourceRenderer = require('../resourceRenderer.js')
 const showHaikuSchema = require('../resourceDisplay.handlebars')
 
 const onLoadRandomResourceSuccess = data => resourceRenderer.displayOnePoem(data)
-
 const onDriftArrowSuccess = data => {
     resourceRenderer.removeOnePoem()
     resourceRenderer.displayOnePoem(data)
 }
 
+const onPublishHaikuFailure = () => resourceRenderer.publishHaikuFailureAlert
 const onPublishHaikuSuccess = () => {
     $('#write-form').trigger('reset')
     resourceRenderer.publishHaikuSuccessAlert()
 }
-
-const onPublishHaikuFailure = () => resourceRenderer.publishHaikuFailureAlert
 
 const onShowMyHaikuSuccess = (data) => {
     const showHaikuHTML = showHaikuSchema({haiku: data.haiku})
@@ -22,11 +20,12 @@ const onShowMyHaikuSuccess = (data) => {
 }
 
 const onViewHaikuSuccess = data => resourceRenderer.viewPoem(data)
-
 const onRemoveHaikuSuccess = () => {
     resourceRenderer.removeHaikuSuccessAlert()
     $('#back-arrow').trigger('click')
 }
+
+const onLoadResourceFailure = () => resourceRenderer.loadResourceFailureAlert()
 
 module.exports = {
     onLoadRandomResourceSuccess,
@@ -35,5 +34,6 @@ module.exports = {
     onPublishHaikuFailure,
     onShowMyHaikuSuccess,
     onViewHaikuSuccess,
-    onRemoveHaikuSuccess
+    onRemoveHaikuSuccess,
+    onLoadResourceFailure
 }

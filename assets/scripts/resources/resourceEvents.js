@@ -6,14 +6,14 @@ const formRenderer = require('../formRenderer.js')
 const onLoadRandomResource = () => {
     resourceApi.loadRandomResource()
         .then(resourceUi.onLoadRandomResourceSuccess)
-        .catch(console.error)
+        .catch(resourceUi.onLoadResourceFailure)
 }
 
 const onDriftArrow = e => {
     e.preventDefault()
     resourceApi.loadRandomResource()
         .then(resourceUi.onDriftArrowSuccess)
-        .then(console.error)
+        .catch(resourceUi.onLoadResourceFailure)
 }
 
 const onPublishHaiku = e => {
@@ -32,7 +32,7 @@ const onPublishHaiku = e => {
 const onShowMyHaiku = () => {
     resourceApi.showMyHaiku()
         .then(resourceUi.onShowMyHaikuSuccess)
-        .catch(console.error)
+        .catch(resourceUi.onLoadResourceFailure)
 }
 
 const onRemoveHaiku = e => {

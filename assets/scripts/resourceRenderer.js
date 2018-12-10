@@ -16,6 +16,12 @@ const displayOnePoem = obj => {
     }, 400)
 }
 
+const removeOnePoem = () => {
+    $('#one-haiku-title').hide('slide', {direction: 'right'}, getRandomTime())
+    $('#one-haiku-content').hide('slide', {direction: 'right'}, getRandomTime())
+    $('#one-haiku-author').hide('slide', {direction: 'right'}, getRandomTime())
+}
+
 const viewPoem = obj => {
     $('.flex-container').hide('fast')
     $('.view-haiku').show('slow')
@@ -25,26 +31,16 @@ const viewPoem = obj => {
     }, 400)
 }
 
-const removeOnePoem = () => {
-    $('#one-haiku-title').hide('slide', {direction: 'right'}, getRandomTime())
-    $('#one-haiku-content').hide('slide', {direction: 'right'}, getRandomTime())
-    $('#one-haiku-author').hide('slide', {direction: 'right'}, getRandomTime())
-}
-
-const exitView = () => {
-    $('.one-haiku-title').hide('slide', {direction: 'right'}, getRandomTime())
-    $('.one-haiku-content').hide('slide', {direction: 'right'}, getRandomTime())
-    $('.one-haiku-author').hide('slide', {direction: 'right'}, getRandomTime())
-}
-
 const publishHaikuSuccessAlert = () => toastr.success('Nice job!')
 const publishHaikuFailureAlert = () => toastr.error('Try again')
 const removeHaikuSuccessAlert = () => toastr.success('Deleted')
+const loadResourceFailureAlert = () => toastr.error('Unknown error. Check connection...')
 module.exports = {
     displayOnePoem,
     removeOnePoem,
     viewPoem,
     publishHaikuSuccessAlert,
     publishHaikuFailureAlert,
-    removeHaikuSuccessAlert
+    removeHaikuSuccessAlert,
+    loadResourceFailureAlert
 }
