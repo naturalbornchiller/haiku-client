@@ -9,7 +9,7 @@ const onDriftArrowSuccess = data => {
     resourceRenderer.displayOnePoem(data)
 }
 
-const onPublishHaikuSuccess = data => {
+const onPublishHaikuSuccess = () => {
     $('#write-form').trigger('reset')
     resourceRenderer.publishHaikuSuccessAlert()
 }
@@ -21,10 +21,19 @@ const onShowMyHaikuSuccess = (data) => {
     $('.flex-container').html(showHaikuHTML)
 }
 
+const onViewHaikuSuccess = data => resourceRenderer.viewPoem(data)
+
+const onRemoveHaikuSuccess = () => {
+    resourceRenderer.removeHaikuSuccessAlert()
+    $('#back-arrow').trigger('click')
+}
+
 module.exports = {
     onLoadRandomResourceSuccess,
     onDriftArrowSuccess,
     onPublishHaikuSuccess,
     onPublishHaikuFailure,
-    onShowMyHaikuSuccess
+    onShowMyHaikuSuccess,
+    onViewHaikuSuccess,
+    onRemoveHaikuSuccess
 }

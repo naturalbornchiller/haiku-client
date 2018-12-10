@@ -51,10 +51,10 @@ const sideNavMyHaiku = () => {
     $('#sidenav-myhaiku').on('click', function () {
         $('#current-panel').children().hide('slow').promise().done(function () {
             $('#myhaiku-display').show('slow')
-            resourceEvents.onShowMyHaiku()
             $('#sidenav-myhaiku').off()
             sideNavWrite()
             sideNavDrift()
+            resourceEvents.onShowMyHaiku()
         })
     })
 }
@@ -101,10 +101,14 @@ function shrinkAccordion () {
 }
 
 function loadResourceActions () {
-    // Resource
     $('#drift-arrow').on('click', resourceEvents.onDriftArrow)
     $('#publish').on('click', resourceEvents.onPublishHaiku)
-    $('.flex-item').on('click', 'button', resourceEvents.onRemoveHaiku)
+    $('.flex-container, .view-haiku').on('click', '.removePoemButton', resourceEvents.onRemoveHaiku)
+    $('.flex-container').on('click', '.viewPoemButton', resourceEvents.onViewHaiku)
+    $('#back-arrow').on('click', function () {
+        $('.view-haiku').hide('fast')
+        $('.flex-container').show('slow')
+    })
 }
 
 function addAccordionToPlus () {

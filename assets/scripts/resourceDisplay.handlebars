@@ -1,9 +1,13 @@
 {{#each haiku as |poem|}}
   {{log poem}}
   <div class="flex-item">
-    <h1 data-id="{{poem.id}}"><small>{{limit poem.title 10}}</small></h1>
+    <h1 data-id="{{poem.id}}"><small>{{poem.title}}</small></h1>
       <section data-id="{{poem.id}}">
-        <button class="removePoemButton">remove</button>
+        <p>
+            <a class="removePoemButton hvr-underline-from-center"><small>remove</a>
+            |
+            <a class="viewPoemButton hvr-underline-from-center">view</small></a>
+        </p>
       </section>
   </div>
 {{/each}}

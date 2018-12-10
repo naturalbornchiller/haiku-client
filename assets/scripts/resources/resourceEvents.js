@@ -6,14 +6,14 @@ const formRenderer = require('../formRenderer.js')
 const onLoadRandomResource = () => {
     resourceApi.loadRandomResource()
         .then(resourceUi.onLoadRandomResourceSuccess)
-        .catch(console.log)
+        .catch(console.error)
 }
 
 const onDriftArrow = e => {
     e.preventDefault()
     resourceApi.loadRandomResource()
         .then(resourceUi.onDriftArrowSuccess)
-        .then(console.log)
+        .then(console.error)
 }
 
 const onPublishHaiku = e => {
@@ -32,15 +32,24 @@ const onPublishHaiku = e => {
 const onShowMyHaiku = () => {
     resourceApi.showMyHaiku()
         .then(resourceUi.onShowMyHaikuSuccess)
-        .catch(console.log)
+        .catch(console.error)
 }
 
 const onRemoveHaiku = e => {
     e.preventDefault()
     const dataId = $(event.target).closest('section').data('id')
-    resourceApi.removeBook(dataId)
+    resourceApi.removeHaiku(dataId)
       .then(() => onShowMyHaiku())
+      .then(resourceUi.onRemoveHaikuSuccess)
       .catch(resourceUi.onRemoveHaikuFailure)
+}
+
+const onViewHaiku = e => {
+    e.preventDefault()
+    const dataId = $(event.target).closest('section').data('id')
+    resourceApi.viewHaiku(dataId)
+      .then(resourceUi.onViewHaikuSuccess)
+      .catch(resourceUi.onViewHaikuFailure)
 }
 
 /*
@@ -57,5 +66,6 @@ module.exports = {
     onDriftArrow,
     onPublishHaiku,
     onShowMyHaiku,
-    onRemoveHaiku
+    onRemoveHaiku,
+    onViewHaiku
 }

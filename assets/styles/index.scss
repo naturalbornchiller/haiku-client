@@ -398,6 +398,39 @@ button:hover {
   flex: 1 0 auto;
   height: 10vw;
   width: 14vw;
+  padding-top: 1em;
+}
+
+
+// view haiku
+.view-haiku {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+.one-haiku-content-container {
+  font-size: 2em;
+  line-height: 2em;
+}
+#remove-from-view {
+  position: absolute;
+  bottom: 1vw;
+  left: 22vw;
+  text-decoration: underline dotted;
+  &:hover {
+    font-style: italic;
+  }
+}
+#back-arrow {
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
+  font-size: 1.3em;
+  cursor: pointer;
+  &:hover {
+    color: blue;
+    font-style: italic;
+  }
 }
 
 

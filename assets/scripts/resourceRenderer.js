@@ -16,18 +16,35 @@ const displayOnePoem = obj => {
     }, 400)
 }
 
+const viewPoem = obj => {
+    $('.flex-container').hide('fast')
+    $('.view-haiku').show('slow')
+    const haiku = breakUpLines(obj.haiku.content)
+    setTimeout(function () {
+        $('.one-haiku-content').html(`${haiku}`)
+    }, 400)
+}
+
 const removeOnePoem = () => {
     $('#one-haiku-title').hide('slide', {direction: 'right'}, getRandomTime())
     $('#one-haiku-content').hide('slide', {direction: 'right'}, getRandomTime())
     $('#one-haiku-author').hide('slide', {direction: 'right'}, getRandomTime())
 }
 
+const exitView = () => {
+    $('.one-haiku-title').hide('slide', {direction: 'right'}, getRandomTime())
+    $('.one-haiku-content').hide('slide', {direction: 'right'}, getRandomTime())
+    $('.one-haiku-author').hide('slide', {direction: 'right'}, getRandomTime())
+}
+
 const publishHaikuSuccessAlert = () => toastr.success('Nice job!')
 const publishHaikuFailureAlert = () => toastr.error('Try again')
-
+const removeHaikuSuccessAlert = () => toastr.success('Deleted')
 module.exports = {
     displayOnePoem,
     removeOnePoem,
+    viewPoem,
     publishHaikuSuccessAlert,
-    publishHaikuFailureAlert
+    publishHaikuFailureAlert,
+    removeHaikuSuccessAlert
 }
